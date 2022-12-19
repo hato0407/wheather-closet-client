@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Register() {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState('');
 
@@ -13,7 +12,7 @@ export default function Login() {
         <Container2>
           <TitleWrapper>
             <Title>날씨 옷장</Title>
-            <SubTitle>오늘 날씨엔 어떻게 입을까?</SubTitle>
+            <SubTitle>어서 가입하시죠</SubTitle>
           </TitleWrapper>
           <Input
             type="email"
@@ -36,9 +35,7 @@ export default function Login() {
         </Container2>
         <Container3>
           <Description>아직 계정이 없다면?</Description>
-          <Link to="/register">
-            <Description>가입하기</Description>
-          </Link>
+          <Description></Description>
           <Description>{data}</Description>
         </Container3>
       </Container>
