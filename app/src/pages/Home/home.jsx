@@ -1,10 +1,19 @@
+import react, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import WeatherView from '../../components/weather';
 
 export default function Home() {
+  const [data, setData] = useState();
+
+  useEffect((e) => {
+    const result = WeatherView(e);
+    setData(result.data);
+  }, []);
+
   return (
     <Container>
       <Search>지역을 입력하세요.</Search>
-      <Weather></Weather>
+      {data}
       <Clothes></Clothes>
       <View></View>
       <Youtube></Youtube>
