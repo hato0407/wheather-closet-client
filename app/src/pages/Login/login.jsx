@@ -6,7 +6,7 @@ export default function Login() {
       <Container2>
         <TitleWrapper>
           <Title>날씨 옷장</Title>
-          <Description>오늘 날씨에는 뭐입지?</Description>
+          <SubTitle>오늘 날씨에는 뭐입지?</SubTitle>
         </TitleWrapper>
         <Input type="email" placeholder="이메일" />
         <Input type="password" placeholder="비밀번호" />
@@ -19,7 +19,7 @@ export default function Login() {
       </Container2>
       <Container3>
         <Description>아직 계정이 없다면?</Description>
-        <Description>가입하러 가기</Description>
+        <Description>가입하기</Description>
       </Container3>
     </Container>
   );
@@ -72,22 +72,35 @@ const Title = styled.h2`
   margin-top: 20px;
 `;
 
-const Description = styled.p`
+const SubTitle = styled.h4`
   color: #5e5f61;
   font-size: 14px;
   margin: 0;
+  opacity: 0.7;
+`;
+
+const Description = styled.p`
+  color: #5e5f61;
+  font-size: 14px;
+  font-weight: bold;
+
+  + p {
+    margin-left: 10px;
+    color: #4b7bf4;
+  }
 `;
 
 const Description2 = styled.p`
-  color: #0730bf;
+  color: #2063b1;
   font-size: 14px;
+  font-weight: bold;
   margin: 0;
   margin-bottom: 20px;
 `;
 
 const Input = styled.input`
   width: 300px;
-  height: 35px;
+  height: 33px;
   padding-left: 10px;
   opacity: 0.7;
   + input {
