@@ -1,9 +1,9 @@
 import axios from 'axios';
-async function weatherView(position) {
+async function WeatherView(props) {
   const API_KEY = 'a360461662224b3d0ea83d05566bf189';
 
-  const lat = position.coords.latitude;
-  const lng = position.coords.longitude;
+  const lat = props.coords.latitude;
+  const lng = props.coords.longitude;
   const request = axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`,
@@ -11,9 +11,9 @@ async function weatherView(position) {
     .then((response) => response.data);
 
   return {
-    type: weatherView,
+    type: WeatherView,
     payload: request,
   };
 }
 
-export default weatherView;
+export default WeatherView;
