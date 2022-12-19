@@ -1,27 +1,45 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Login() {
+  const { register, handleSubmit } = useForm();
+  const [data, setData] = useState('');
+
   return (
-    <Container>
-      <Container2>
-        <TitleWrapper>
-          <Title>날씨 옷장</Title>
-          <SubTitle>오늘 날씨에는 뭐입지?</SubTitle>
-        </TitleWrapper>
-        <Input type="email" placeholder="이메일" />
-        <Input type="password" placeholder="비밀번호" />
-        <Button>로그인</Button>
-        <DividerLine />
-        <LoginWrapper>
-          <Description2>구글로 로그인</Description2>
-          <Description2>비밀번호를 잊으셨나요?</Description2>
-        </LoginWrapper>
-      </Container2>
-      <Container3>
-        <Description>아직 계정이 없다면?</Description>
-        <Description>가입하기</Description>
-      </Container3>
-    </Container>
+    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+      <Container>
+        <Container2>
+          <TitleWrapper>
+            <Title>날씨 옷장</Title>
+            <SubTitle>오늘 날씨엔 어떻게 입을까?</SubTitle>
+          </TitleWrapper>
+          <Input
+            type="email"
+            {...register('email', { required: true })}
+            placeholder="이메일"
+          />
+
+          <Input
+            type="password"
+            {...register('password', { required: true, minLength: 4 })}
+            placeholder="비밀번호"
+          />
+
+          <Button type="submit">로그인</Button>
+          <DividerLine />
+          <LoginWrapper>
+            <Description2>구글로 로그인</Description2>
+            <Description2>비밀번호를 잊으셨나요?</Description2>
+          </LoginWrapper>
+        </Container2>
+        <Container3>
+          <Description>아직 계정이 없다면?</Description>
+          <Description>가입하기</Description>
+          <Description>{data}</Description>
+        </Container3>
+      </Container>
+    </form>
   );
 }
 
@@ -99,8 +117,8 @@ const Description2 = styled.p`
 `;
 
 const Input = styled.input`
-  width: 300px;
-  height: 33px;
+  width: 310px;
+  height: 38px;
   padding-left: 10px;
   opacity: 0.7;
   + input {
