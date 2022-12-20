@@ -24,7 +24,7 @@ ListItem.defaultProps = {
 
 function ListItem({ heartCount, clothesImage }) {
   return (
-    <ItemLayout>
+    <li>
       <ItemWrapper>
         <Clothes>
           <ClothesImage src={clothesImage} alt="" />
@@ -34,11 +34,9 @@ function ListItem({ heartCount, clothesImage }) {
           <HeartCount>{heartCount}</HeartCount>
         </HeartWrapper>
       </ItemWrapper>
-    </ItemLayout>
+    </li>
   );
 }
-
-const ItemLayout = styled.li``;
 
 const ItemWrapper = styled.div`
   position: relative;
