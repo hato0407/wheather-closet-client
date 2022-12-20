@@ -3,11 +3,10 @@ import BoardList from './../../components/BoardList';
 import Avartar from './../../components/Avartar';
 
 MyPage.defaultProps = {
-  userAvatar: '../../default-profile.png',
   userId: 'clother',
 };
 
-export default function MyPage({ userAvatar, userId }) {
+export default function MyPage({ userId }) {
   return (
     <main>
       <S.UserProfile>
