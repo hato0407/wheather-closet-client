@@ -1,6 +1,6 @@
 import * as S from './MyPage.style';
-import BoardList from './../../components/BoardList';
-import Avartar from './../../components/Avartar';
+import Avartar from './../../components/Avartar/Avatar';
+import BoardList from '../../components/Board/BoardList';
 
 MyPage.defaultProps = {
   userId: 'clother',

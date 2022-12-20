@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
+// List(ul)
 export const ListLayout = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px 20px;
 `;
 
-// List
+// Item(li)
 export const ItemWrapper = styled.div`
   position: relative;
 `;
