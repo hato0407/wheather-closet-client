@@ -1,4 +1,4 @@
-import * as S from './index.style';
+import * as S from './Avatar.style';
 
 export default function Avartar() {
   return (
