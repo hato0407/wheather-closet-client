@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 export default function Register() {
   const { register, handleSubmit } = useForm();
@@ -12,12 +13,14 @@ export default function Register() {
         <Container2>
           <TitleWrapper>
             <Title>날씨 옷장</Title>
-            <SubTitle>어서 가입하시죠</SubTitle>
+            <SubTitle>날씨에 맞는 옷을 추천해드려요.</SubTitle>
+            <RButton>구글로 로그인</RButton>
+            <DividerLine />
           </TitleWrapper>
           <Input
             type="email"
             {...register('email', { required: true })}
-            placeholder="이메일"
+            placeholder="이메일 주소"
           />
 
           <Input
@@ -26,16 +29,27 @@ export default function Register() {
             placeholder="비밀번호"
           />
 
-          <Button type="submit">로그인</Button>
-          <DividerLine />
-          <LoginWrapper>
-            <Description2>구글로 로그인</Description2>
-            <Description2>비밀번호를 잊으셨나요?</Description2>
-          </LoginWrapper>
+          <Input
+            type="password"
+            {...register('password', { required: true, minLength: 4 })}
+            placeholder="비밀번호 확인"
+          />
+
+          <Input
+            type="text"
+            {...register('email', { required: true })}
+            placeholder="닉네임"
+          />
+
+          <LButton type="submit">가입</LButton>
         </Container2>
         <Container3>
-          <Description>아직 계정이 없다면?</Description>
-          <Description></Description>
+          <Description>계정이 있으신가요?</Description>
+
+          <Description>
+            <Link to="/login">로그인</Link>
+          </Description>
+
           <Description>{data}</Description>
         </Container3>
       </Container>
@@ -55,7 +69,7 @@ const Container2 = styled.div`
   border: 2px solid #f0f1f3;
   border-radius: 3px;
   width: 400px;
-  height: 450px;
+  height: 500px;
   box-sizing: border-box;
   padding: 28px 24px 20px;
   display: flex;
@@ -93,7 +107,7 @@ const Title = styled.h2`
 const SubTitle = styled.h4`
   color: #5e5f61;
   font-size: 14px;
-  margin: 0;
+  margin: 0px 0px 20px 0px;
   opacity: 0.7;
 `;
 
@@ -105,15 +119,8 @@ const Description = styled.p`
   + p {
     margin-left: 10px;
     color: #4b7bf4;
+    cursor: pointer;
   }
-`;
-
-const Description2 = styled.p`
-  color: #2063b1;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0;
-  margin-bottom: 20px;
 `;
 
 const Input = styled.input`
@@ -126,9 +133,9 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.button`
+const LButton = styled.button`
   width: 320px;
-  height: 35px;
+  height: 40px;
   margin: 20px 0px 20px 0px;
   background-color: #fff500;
   border: solid #ffffff;
@@ -136,18 +143,19 @@ const Button = styled.button`
   opacity: 0.5;
 `;
 
+const RButton = styled.button`
+  width: 320px;
+  height: 35px;
+  background-color: #fff500;
+  border: solid #ffffff;
+  border-radius: 8px;
+  opacity: 0.8;
+`;
+
 const DividerLine = styled.div`
   width: 310px;
   height: 2px;
   background-color: #ececec;
   position: absolute;
-  bottom: 120px;
-`;
-
-const LoginWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 70px;
-  margin-top: auto;
+  bottom: 260px;
 `;

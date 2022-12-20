@@ -36,9 +36,11 @@ export default function Login() {
         </Container2>
         <Container3>
           <Description>아직 계정이 없다면?</Description>
-          <Link to="/register">
-            <Description>가입하기</Description>
-          </Link>
+
+          <Description>
+            <Link to="/register">가입하기</Link>
+          </Description>
+
           <Description>{data}</Description>
         </Container3>
       </Container>
