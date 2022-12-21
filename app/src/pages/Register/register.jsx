@@ -1,11 +1,19 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 export default function Register() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const [data, setData] = useState('');
+
+  const password = useRef();
+  password.current = watch('password');
 
   return (
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
@@ -31,17 +39,24 @@ export default function Register() {
 
           <Input
             type="password"
-            {...register('password', { required: true, minLength: 4 })}
+            {...register('password_confirm', {
+              required: true,
+              validate: (value) => value === password.current,
+            })}
             placeholder="비밀번호 확인"
           />
 
           <Input
             type="text"
-            {...register('email', { required: true })}
+            {...register('email', { required: true, maxLength: 10 })}
             placeholder="닉네임"
           />
 
           <LButton type="submit">가입</LButton>
+
+          {errors.password_confirm && (
+            <Description>비밀번호가 일치하지 않습니다.</Description>
+          )}
         </Container2>
         <Container3>
           <Description>계정이 있으신가요?</Description>
@@ -69,7 +84,7 @@ const Container2 = styled.div`
   border: 2px solid #f0f1f3;
   border-radius: 3px;
   width: 400px;
-  height: 500px;
+  height: 560px;
   box-sizing: border-box;
   padding: 28px 24px 20px;
   display: flex;
@@ -129,7 +144,7 @@ const Input = styled.input`
   padding-left: 10px;
   opacity: 0.7;
   + input {
-    margin-top: 10px;
+    margin-top: 25px;
   }
 `;
 
