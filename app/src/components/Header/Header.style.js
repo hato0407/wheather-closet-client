@@ -1,22 +1,27 @@
 import styled from 'styled-components';
 
+export const HeaderLayout = styled.header`
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 55px;
+`;
+
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 16px;
+  padding: 34px 0;
 `;
 
 export const Nav = styled.nav`
   display: flex;
+  align-items: center;
   margin-left: auto;
 `;
 
 export const MenuItem = styled.span`
-  display: inline-block;
-  width: 130px;
-  height: 40px;
-  line-height: 40px;
+  diplay: inline-block;
+  padding: 8px 16px;
   background-color: #fff0a4;
   text-align: center;
   cursor: pointer;
