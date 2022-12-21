@@ -1,32 +1,32 @@
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  html, body {
-    width: 100%;
-    height: 100%;
-  }
+html, body {
+  width: 100%;
+  height: 100%;
+}
 
-  li {
-    padding-left: 0;
-  }
+ul {
+  padding-left: 0;
+}
 
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  button {
-    cursor: pointer;
-  }
+button {
+  cursor: pointer;
+}
 `;
 
 export default GlobalStyle;
