@@ -3,7 +3,7 @@ import Avartar from './../Avartar/Avatar';
 
 export default function Header() {
   return (
-    <header>
+    <S.HeaderLayout>
       <S.HeaderWrapper>
         {/* TODO 로고 컴포넌트 만들기 */}
         <span>날씨옷장</span>
@@ -25,6 +25,6 @@ export default function Header() {
           </S.UserMenuWrapper>
         </S.UserMenu>
       </S.HeaderWrapper>
-    </header>
+    </S.HeaderLayout>
   );
 }
