@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store.js';
 import GlobalStyle from './style/GlobalStyle';
+import Header from './components/Header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter>
       <GlobalStyle />
       <Provider store={store}>
+        <Header />
         <App />
       </Provider>
     </BrowserRouter>
