@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Avartar from './../../components/Avatar';
+import Avartar from './../../components/Avartar/Avatar';
 
 export default function Account() {
   return (
