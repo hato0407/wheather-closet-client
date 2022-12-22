@@ -1,11 +1,13 @@
+import React, { useEffect, useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
 
 export default function Write() {
   return (
-    <Container_Wrapper>
+    <ContainerWrapper>
       <Container>
         <SubTitle>새 게시물 만들기</SubTitle>
-        <Container_box>
+        <ContainerBox>
           <Container2>
             <img src="/select.png" alt="select_image" />
             <SeleteButton>사진 선택하기</SeleteButton>
@@ -25,12 +27,12 @@ export default function Write() {
             </UserWrite>
             <Button>공유하기</Button>
           </Container2>
-        </Container_box>
+        </ContainerBox>
       </Container>
-    </Container_Wrapper>
+    </ContainerWrapper>
   );
 }
-const Container_Wrapper = styled.div`
+const ContainerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +49,7 @@ const Container = styled.div`
   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 `;
 
-const Container_box = styled.div`
+const ContainerBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +105,15 @@ const Description = styled.p`
 `;
 
 const SeleteButton = styled.button`
+  height: 35px;
+  margin: 0px 0px 20px 0px;
+  background-color: #fff500;
+  border: solid #ffffff;
+  border-radius: 8px;
+  opacity: 0.7;
+`;
+
+const SeleteInput = styled.input`
   height: 35px;
   margin: 0px 0px 20px 0px;
   background-color: #fff500;
