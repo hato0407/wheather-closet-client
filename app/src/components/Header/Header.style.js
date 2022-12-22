@@ -19,26 +19,33 @@ export const Nav = styled.nav`
   margin-left: auto;
 `;
 
-export const MenuItem = styled.span`
-  diplay: inline-block;
-  padding: 8px 16px;
-  background-color: #fff0a4;
-  text-align: center;
-  cursor: pointer;
+export const Menu = styled.div`
+  display: flex;
 `;
 
-export const MenuLogin = styled.span`
-  span {
-    width: 90px;
-    background-color: #ececec;
-    margin-left: 20px;
+export const MenuItem = styled.span`
+  display: inline-block;
+
+  > a {
+    display: inline-block;
+    padding: 12px 16px;
+    background-color: #fff0a4;
   }
+`;
+
+export const MenuItemAuth = styled.div`
+  display: inline-block;
+
+  > span > a {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 12px 16px;
+    background-color: #00E5FF
 `;
 
 export const UserMenu = styled.div`
   position: relative;
   margin-left: 30px;
-
   div:first-child {
     width: 40px;
     height: 40px;
@@ -52,11 +59,14 @@ export const UserMenuWrapper = styled.div`
   right: 0;
   top: 50px;
   padding: 18px 8px;
+  background-color: #fff;
   border: 1px solid black;
 `;
 
 export const UserMenuItem = styled.li`
-  + li {
-    margin-top: 6px;
+  margin-top: 12px;
+
+  :first-child {
+    margin-top: 0;
   }
 `;
