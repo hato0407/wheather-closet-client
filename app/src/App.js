@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/home';
 import Login from './pages/Login/login';
-import MyPage from './pages/MyPage/MyPage';
+import MyPage from './pages/mypage/MyPage';
 import Register from './pages/Register/register';
-import Account from './pages/Account/Account';
+import Account from './pages/account/Account';
+import NotFound from './pages/notFound/NotFound';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/mypage/:id" element={<MyPage />} />
-      <Route path="/account/:id" element={<Account />} />
+      <Route path="/mypage" element={<MyPage />} />
+      <Route path="/account" element={<Account />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 }
