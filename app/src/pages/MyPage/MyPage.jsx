@@ -1,16 +1,25 @@
+import { useState } from 'react';
 import * as S from './MyPage.style';
 import Avartar from './../../components/Avartar/Avatar';
 import BoardList from '../../components/Board/BoardList';
+import AvartarModal from './../../components/Avartar/AvatarModal';
 
 MyPage.defaultProps = {
   userId: 'clother',
 };
 
 export default function MyPage({ userId }) {
+  const [show, setShow] = useState(false);
+
+  const handleModal = () => {
+    setShow(!show);
+  };
+
   return (
     <main>
       <S.UserProfile>
-        <Avartar />
+        <Avartar onClick={handleModal} />
+        {show && <AvartarModal onClick={handleModal} />}
         <S.UserId>{userId}</S.UserId>
       </S.UserProfile>
       <hr />
