@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 export const AvartarModalLayout = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #2e2d2d;
-  opacity: 0.6;
+  padding: 12px;
+  background-color: #0000004d;
   z-index: 999;
 `;
 
@@ -16,36 +21,39 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 320px;
-  border: 1px solid #eee;
+  width: 100%;
+  max-width: 580px;
+  height: 310px;
+  background-color: #ffffff;
+  box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.3);
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  > div:first-child {
+    width: 150px;
+    height: 150px;
+    background: gray;
+    border-radius: 70%;
+    overflow: hidden;
+  }
 `;
 
 export const SaveButton = styled.button`
   position: absolute;
   bottom: 30px;
-  width: 100px;
-  height: 30px;
+  padding: 6px 10px;
+  border: 1px solid #000;
+  border-radius: 30px;
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
-`;
-
-export const Preview = styled.div`
-  width: 140px;
-  height: 140px;
-  border: 1px solid #eee;
-  border-radius: 70%;
-  color: white;
+  top: 15px;
+  right: 15px;
 `;
 
 export const Buttons = styled.div`
@@ -58,17 +66,17 @@ export const Buttons = styled.div`
 
 export const Label = styled.label`
   display: block;
-  width: 180px;
-  height: 50px;
-  line-height: 50px;
+  padding: 14px 12px;
   text-align: center;
-  background-color: lightgray;
+  border: 1px solid #000;
   cursor: pointer;
 `;
 
 export const Button = styled.button`
   display: block;
-  width: 180px;
-  height: 50px;
+  width: 100%;
   margin-top: 18px;
+  font-size: 1rem;
+  padding: 14px 12px;
+  border: 1px solid #000;
 `;
