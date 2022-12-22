@@ -28,7 +28,9 @@ export default function Header() {
               <S.UserMenuItem>
                 <Link to="/mypage">마이페이지</Link>
               </S.UserMenuItem>
-              <S.UserMenuItem>계정관리</S.UserMenuItem>
+              <S.UserMenuItem>
+                <Link to="/account">계정관리</Link>
+              </S.UserMenuItem>
               <S.UserMenuItem>로그아웃</S.UserMenuItem>
             </ul>
           </S.UserMenuWrapper>
