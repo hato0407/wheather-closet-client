@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as S from './Account.style';
-import Avartar from './../../components/Avartar/Avatar';
-import AvartarModal from './../../components/Avartar/AvatarModal';
+import Avartar from '../../components/avatar/Avatar';
+import AvartarModal from '../../components/avatar/AvatarModal';
 
 export default function Account() {
   const [show, setShow] = useState(false);

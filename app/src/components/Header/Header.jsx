@@ -1,6 +1,6 @@
-import * as S from './Header.style';
-import Avartar from './../Avartar/Avatar';
 import { Link } from 'react-router-dom';
+import * as S from './Header.style';
+import Avartar from '../../components/avatar/Avatar';
 
 export default function Header() {
   return (
