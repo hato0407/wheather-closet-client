@@ -2,14 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store.js';
+import GlobalStyle from './style/GlobalStyle';
+import Header from './components/Header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
 );
