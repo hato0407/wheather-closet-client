@@ -2,39 +2,55 @@ import styled from 'styled-components';
 
 export default function Write() {
   return (
-    <Container>
-      <SubTitle>새 게시물 만들기</SubTitle>
-      <Container_box>
-        <Container2>
-          <img src="/select.png" alt="select_image" />
-          <Button>사진 선택하기</Button>
-        </Container2>
-        <Container2>
-          <Container3>유저 닉네임</Container3>
-          <Container3>위치 추가</Container3>
-          <Container3>옷 종류 태그</Container3>
-          <Container3>스타일 구분</Container3>
-        </Container2>
-      </Container_box>
-    </Container>
+    <Container_Wrapper>
+      <Container>
+        <SubTitle>새 게시물 만들기</SubTitle>
+        <Container_box>
+          <Container2>
+            <img src="/select.png" alt="select_image" />
+            <SeleteButton>사진 선택하기</SeleteButton>
+          </Container2>
+          <Container2>
+            <UserName>
+              <Title>유저 닉네임</Title>
+            </UserName>
+            <UserWrite>
+              <Description>위치 추가</Description>
+            </UserWrite>
+            <UserWrite>
+              <Description>옷 종류 태그</Description>
+            </UserWrite>
+            <UserWrite>
+              <Description>스타일 구분</Description>
+            </UserWrite>
+            <Button>공유하기</Button>
+          </Container2>
+        </Container_box>
+      </Container>
+    </Container_Wrapper>
   );
 }
+const Container_Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+`;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 700px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 1100px;
+  height: 650px;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 `;
 
 const Container_box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0;
 `;
 
 const Container2 = styled.div`
@@ -55,16 +71,21 @@ const Container2 = styled.div`
   }
 `;
 
-const Container3 = styled.div`
+const UserName = styled.div`
+  width: 300px;
+  height: 30px;
+  margin-bottom: 80px;
+`;
+
+const UserWrite = styled.div`
   width: 300px;
   height: 30px;
   margin: 20px 0px 20px 0px;
+  border-bottom: solid 1px #ececec;
 `;
 
-const Title = styled.h2`
-  font-weight: bold;
-  font-size: 40px;
-  color: #151618;
+const Title = styled.h5`
+  color: #5e5f61;
   margin: 0;
   margin-top: 20px;
 `;
@@ -72,7 +93,6 @@ const Title = styled.h2`
 const SubTitle = styled.h4`
   color: #5e5f61;
   font-size: 20px;
-  margin: 0;
   opacity: 0.8;
 `;
 
@@ -80,25 +100,20 @@ const Description = styled.p`
   color: #5e5f61;
   font-size: 14px;
   font-weight: bold;
-
-  + p {
-    margin-left: 10px;
-    color: #4b7bf4;
-  }
 `;
 
-const Description2 = styled.p`
-  color: #2063b1;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0;
-  margin-bottom: 20px;
+const SeleteButton = styled.button`
+  height: 35px;
+  margin: 0px 0px 20px 0px;
+  background-color: #fff500;
+  border: solid #ffffff;
+  border-radius: 8px;
+  opacity: 0.7;
 `;
 
 const Button = styled.button`
-  width: 150px;
   height: 35px;
-  margin: 0px 0px 20px 0px;
+  margin-top: 45px;
   background-color: #fff500;
   border: solid #ffffff;
   border-radius: 8px;
