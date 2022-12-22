@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
+
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
   }
 
   html, body {
@@ -12,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  li {
+  ul {
     padding-left: 0;
   }
 
@@ -25,7 +26,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    background: inherit;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
     cursor: pointer;
+  }
+
+  #root{
+    position: relative;
   }
 `;
 

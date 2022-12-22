@@ -1,4 +1,3 @@
-import react, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import WeatherView from './weather';
 import Youtube from './youtube';
