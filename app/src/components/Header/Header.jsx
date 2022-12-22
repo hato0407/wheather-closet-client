@@ -1,8 +1,19 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import Avartar from '../../components/avatar/Avatar';
 
 export default function Header() {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
+  const handleItem = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <S.HeaderLayout>
       <S.HeaderWrapper>
@@ -26,18 +37,20 @@ export default function Header() {
           </S.Menu>
         </S.Nav>
         <S.UserMenu>
-          <Avartar />
-          <S.UserMenuWrapper>
-            <ul>
-              <S.UserMenuItem>
-                <Link to="/mypage">마이페이지</Link>
-              </S.UserMenuItem>
-              <S.UserMenuItem>
-                <Link to="/account">계정관리</Link>
-              </S.UserMenuItem>
-              <S.UserMenuItem>로그아웃</S.UserMenuItem>
-            </ul>
-          </S.UserMenuWrapper>
+          <Avartar onClick={handleToggle} />
+          {toggle && (
+            <S.UserMenuWrapper>
+              <ul onClick={handleItem}>
+                <S.UserMenuItem>
+                  <Link to="/mypage">마이페이지</Link>
+                </S.UserMenuItem>
+                <S.UserMenuItem>
+                  <Link to="/account">계정관리</Link>
+                </S.UserMenuItem>
+                <S.UserMenuItem>로그아웃</S.UserMenuItem>
+              </ul>
+            </S.UserMenuWrapper>
+          )}
         </S.UserMenu>
       </S.HeaderWrapper>
     </S.HeaderLayout>
