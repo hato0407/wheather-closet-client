@@ -10,10 +10,6 @@ export default function Header() {
     setToggle(!toggle);
   };
 
-  const handleItem = () => {
-    setToggle(!toggle);
-  };
-
   return (
     <S.HeaderLayout>
       <S.HeaderWrapper>
@@ -40,7 +36,7 @@ export default function Header() {
           <Avartar onClick={handleToggle} />
           {toggle && (
             <S.UserMenuWrapper>
-              <ul onClick={handleItem}>
+              <ul onClick={handleToggle}>
                 <S.UserMenuItem>
                   <Link to="/mypage">마이페이지</Link>
                 </S.UserMenuItem>
