@@ -30,6 +30,7 @@ export const MenuItem = styled.span`
     display: inline-block;
     padding: 12px 16px;
     background-color: #fff0a4;
+    border-radius: 8px;
   }
 `;
 
@@ -46,6 +47,7 @@ export const MenuItemAuth = styled.div`
 export const UserMenu = styled.div`
   position: relative;
   margin-left: 30px;
+
   div:first-child {
     width: 40px;
     height: 40px;
