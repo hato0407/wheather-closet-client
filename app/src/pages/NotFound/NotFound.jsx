@@ -1,31 +1,16 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import * as S from './NotFound.style';
 
 export default function NotFound() {
   return (
-    <NotFoundLayout>
-      <NotFoundWrapper>
+    <S.NotFoundLayout>
+      <S.NotFoundWrapper>
         <span>날씨옷장 로고</span>
-        <h1>존재하지 않는 페이지 입니다.</h1>
-        <Links>
+        <S.Title>존재하지 않는 페이지 입니다.</S.Title>
+        <S.Links>
           <Link to="/"> 홈으로 이동 </Link>
-        </Links>
-      </NotFoundWrapper>
-    </NotFoundLayout>
+        </S.Links>
+      </S.NotFoundWrapper>
+    </S.NotFoundLayout>
   );
 }
-
-const NotFoundLayout = styled.section`
-  padding: 8.75rem 0;
-`;
-
-const NotFoundWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-`;
-
-const Links = styled.div`
-  margin-top: 1rem;
-`;
