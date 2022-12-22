@@ -11,15 +11,19 @@ export default function Header() {
           <Link to="/">날씨옷장</Link>
         </span>
         <S.Nav>
-          <S.MenuItem>옷차림 특파원</S.MenuItem>
-          <S.MenuLogin>
+          <S.Menu>
             <S.MenuItem>
-              <Link to="/login">로그인</Link>
+              <a href="/board">옷차림 특파원</a>
             </S.MenuItem>
-            <S.MenuItem>
-              <Link to="/register">회원가입</Link>
-            </S.MenuItem>
-          </S.MenuLogin>
+            <S.MenuItemAuth>
+              <S.MenuItem>
+                <Link to="/login">로그인</Link>
+              </S.MenuItem>
+              <S.MenuItem>
+                <Link to="/register">회원가입</Link>
+              </S.MenuItem>
+            </S.MenuItemAuth>
+          </S.Menu>
         </S.Nav>
         <S.UserMenu>
           <Avartar />
