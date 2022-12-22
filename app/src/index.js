@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store.js';
-import GlobalStyle from './style/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
