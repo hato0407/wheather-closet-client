@@ -5,6 +5,7 @@ import MyPage from './pages/MyPage/MyPage';
 import Register from './pages/Register/register';
 import Account from './pages/Account/Account';
 import NotFound from './pages/NotFound/NotFound';
+import Write from './pages/Write/write';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/account" element={<Account />} />
+      <Route path="/write" element={<Write />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );
