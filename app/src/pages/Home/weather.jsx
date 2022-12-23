@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 export default function WeatherView() {
   const [temperature, setTemperature] = useState();
@@ -10,6 +11,7 @@ export default function WeatherView() {
   const [place, setPlace] = useState('');
   const API_KEY = 'a360461662224b3d0ea83d05566bf189';
   const iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
+
   function handleChange(event) {
     setPlace(event.target.value);
   }
@@ -48,10 +50,12 @@ export default function WeatherView() {
   return (
     <Container>
       <SearchContainer>
-        <Title>What Should I Wear Today?</Title>
+        <Title>
+          <h1>What Should I Wear Today?</h1>
+        </Title>
         <Input
           type="text"
-          placeholder="지역을 입력하세요."
+          placeholder="영어로 지역명을 입력하세요. ex)Seoul"
           onChange={handleChange}
         />
         <SearchButton onClick={hanleClickForCity}>검색</SearchButton>
@@ -92,14 +96,17 @@ const SearchContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
 `;
-const Title = styled.h1`
+const Title = styled.div`
+  padding-bottom: 5vh;
+  font-size: 2rem;
   text-align: center;
 `;
 const Input = styled.input`
   border-radius: 25px;
   width: 55vw;
-  height: 5vh;
+  height: 6vh;
   text-align: center;
+  border: solid 1px #e2e2e2;
 `;
 const Button = styled.button`
   background-color: #f5f5f5;
