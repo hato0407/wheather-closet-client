@@ -36,6 +36,7 @@ export default function Account({ nickname, userEmail }) {
     }
   };
 
+  // 비밀번호 재확인
   const handlePasswordCheck = (e) => {
     const passwordCheck = e.target.value;
 
@@ -67,54 +68,52 @@ export default function Account({ nickname, userEmail }) {
         <S.Profile>
           <h2>프로필</h2>
           <hr />
-          <S.ProfileContainer>
-            <S.ProfileWrapper>
-              <Avartar onClick={handleModal} />
-              {show && <AvartarModal onClick={handleModal} />}
-              <S.UserFormWrapper>
-                <form>
-                  <S.Label>닉네임</S.Label>
-                  <S.NickNameWrapper>
-                    <S.Input type="text" defaultValue={nickname} />
-                    <S.SubmitButton type="submit">변경하기</S.SubmitButton>
-                  </S.NickNameWrapper>
-                  <S.Password>
-                    <div>
-                      <S.Label htmlFor="password">새로운 비밀번호</S.Label>
-                      <S.PasswordWrapper>
-                        <S.Input
-                          type="password"
-                          id="password"
-                          defaultValue={password}
-                          onChange={handlePassword}
-                        />
-                        <S.Message>{passwordMessage}</S.Message>
-                      </S.PasswordWrapper>
-                    </div>
-                    <div>
-                      <S.Label htmlFor="password-check">
-                        새로운 비밀번호 확인
-                      </S.Label>
-                      <S.PasswordWrapper>
-                        <S.Input
-                          type="password"
-                          id="password-check"
-                          defaultValue={passwordCheck}
-                          onChange={handlePasswordCheck}
-                        />
-                        <S.Message>{passwordCheckMessage}</S.Message>
-                      </S.PasswordWrapper>
-                    </div>
-                    <S.SubmitButton type="submit">변경하기</S.SubmitButton>
-                  </S.Password>
-                </form>
-                <div>
-                  <S.Label>이메일</S.Label>
-                  <S.Input type="text" value={userEmail} disabled />
-                </div>
-              </S.UserFormWrapper>
-            </S.ProfileWrapper>
-          </S.ProfileContainer>
+          <S.ProfileWrapper>
+            <Avartar onClick={handleModal} />
+            {show && <AvartarModal onClick={handleModal} />}
+            <S.UserFormWrapper>
+              <form>
+                <S.Label>닉네임</S.Label>
+                <S.NickNameWrapper>
+                  <S.Input type="text" defaultValue={nickname} />
+                  <S.SubmitButton type="submit">변경하기</S.SubmitButton>
+                </S.NickNameWrapper>
+                <S.Password>
+                  <div>
+                    <S.Label htmlFor="password">새로운 비밀번호</S.Label>
+                    <S.PasswordWrapper>
+                      <S.Input
+                        type="password"
+                        id="password"
+                        defaultValue={password}
+                        onChange={handlePassword}
+                      />
+                      <S.Message>{passwordMessage}</S.Message>
+                    </S.PasswordWrapper>
+                  </div>
+                  <div>
+                    <S.Label htmlFor="password-check">
+                      새로운 비밀번호 확인
+                    </S.Label>
+                    <S.PasswordWrapper>
+                      <S.Input
+                        type="password"
+                        id="password-check"
+                        defaultValue={passwordCheck}
+                        onChange={handlePasswordCheck}
+                      />
+                      <S.Message>{passwordCheckMessage}</S.Message>
+                    </S.PasswordWrapper>
+                  </div>
+                  <S.SubmitButton type="submit">변경하기</S.SubmitButton>
+                </S.Password>
+              </form>
+              <div>
+                <S.Label>이메일</S.Label>
+                <S.Input type="text" value={userEmail} disabled />
+              </div>
+            </S.UserFormWrapper>
+          </S.ProfileWrapper>
         </S.Profile>
         <S.DeleteAccount>
           <h2>회원탈퇴</h2>

@@ -34,19 +34,13 @@ export const Profile = styled.section`
   max-width: 60rem;
 `;
 
-export const ProfileContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1.5rem 0;
-`;
-
 export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 70px;
+  width: 100%;
+  max-width: 60rem;
+  padding: 2.5rem 0;
 
   > div {
     justify-content: flex-start;
@@ -60,21 +54,22 @@ export const NickNameWrapper = styled.div`
 export const UserFormWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1rem;
+
+  > form {
+    width: 420px;
+  }
 `;
 
 export const Password = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
   margin-top: 2rem;
 
   > button {
-    position: absolute;
-    top: 0;
-    right: -124px;
-    margin-left: 0;
+    width: 77.31px;
+    margin-left: 56px;
   }
 `;
 
