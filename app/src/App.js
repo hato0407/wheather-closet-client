@@ -4,7 +4,7 @@ import Login from './pages/Login/login';
 import MyPage from './pages/mypage/MyPage';
 import Register from './pages/Register/register';
 import Account from './pages/account/Account';
-import NotFound from './pages/notFound/NotFound';
+import NotFound from './pages/notfound/NotFound';
 import Write from './pages/Write/write';
 
 function App() {
