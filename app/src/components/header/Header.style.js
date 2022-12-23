@@ -36,9 +36,9 @@ export const MenuItemAuth = styled.div`
 
   > span > a {
     display: inline-block;
-    margin-left: 20px;
-    padding: 12px 16px;
-    background-color: #00c7ff;
+    margin-left: 1.25rem;
+    padding: 0.75rem 1rem;
+    background-color: #00e5ff;
 `;
 
 export const UserMenu = styled.div`
