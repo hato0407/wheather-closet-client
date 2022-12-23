@@ -24,6 +24,7 @@ export const MenuItem = styled.span`
 
   > a {
     display: inline-block;
+    margin-left: 20px;
     padding: 0.75rem 1rem;
     background-color: #fff0a4;
     border-radius: 0.5rem;
