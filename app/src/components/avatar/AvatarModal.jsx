@@ -10,10 +10,10 @@ export default function AvartarModal({ onClick }) {
           <S.Buttons>
             <S.Label htmlFor="upload">이미지 업로드</S.Label>
             <input type="file" id="upload" accept="image/jpg, image/png" />
-            <S.Button>이미지 삭제</S.Button>
+            <S.DeleteButton>이미지 삭제</S.DeleteButton>
           </S.Buttons>
         </S.Wrapper>
-        <S.SaveButton onClick={onClick}>완료</S.SaveButton>
+        <S.SaveButton onClick={onClick}>저장</S.SaveButton>
         <S.CloseButton onClick={onClick}>X</S.CloseButton>
       </S.Container>
     </S.AvartarModalLayout>

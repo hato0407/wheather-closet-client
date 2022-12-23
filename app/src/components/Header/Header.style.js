@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
-export const HeaderLayout = styled.header`
-  width: 1280px;
-  margin: 0 auto;
-  padding: 0 55px;
-`;
-
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 34px 0;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 0;
 `;
 
 export const Nav = styled.nav`
@@ -28,9 +24,9 @@ export const MenuItem = styled.span`
 
   > a {
     display: inline-block;
-    padding: 12px 16px;
+    padding: 0.75rem 1rem;
     background-color: #fff0a4;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
 `;
 
@@ -41,32 +37,32 @@ export const MenuItemAuth = styled.div`
     display: inline-block;
     margin-left: 20px;
     padding: 12px 16px;
-    background-color: #00E5FF
+    background-color: #00c7ff;
 `;
 
 export const UserMenu = styled.div`
   position: relative;
-  margin-left: 30px;
+  margin-left: 1.875rem;
 
   div:first-child {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;
 
 export const UserMenuWrapper = styled.div`
   position: absolute;
-  width: 100px;
-  height: 110px;
+  width: 6.25rem;
+  height: 6.875rem;
   right: 0;
   top: 50px;
-  padding: 18px 8px;
+  padding: 1.125rem 0.5rem;
   background-color: #fff;
   border: 1px solid black;
 `;
 
 export const UserMenuItem = styled.li`
-  margin-top: 12px;
+  margin-top: 0.75rem;
 
   :first-child {
     margin-top: 0;
