@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
-export const UserProfile = styled.section`
+export const MyPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+`;
+
+export const ProfileWrapper = styled.section`
   display: flex;
   align-items: center;
-  padding: 24px 0;
+  justify-content: center;
+  max-width: 1100px;
+  margin-top: 2rem;
 `;
 
 export const UserId = styled.span`
@@ -12,8 +22,22 @@ export const UserId = styled.span`
   font-weight: bold;
 `;
 
+export const Hr = styled.hr`
+  width: 100%;
+  max-width: 1100px;
+`;
+
+export const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+`;
+
 export const TabWrapper = styled.div`
-  margin: 30px 0;
+  margin-bottom: 30px;
   text-align: center;
   cursor: pointer;
 
