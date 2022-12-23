@@ -10,7 +10,7 @@ export default function Youtube() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=react&type=video&key=${API_KEY}`,
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=padding&type=video&key=${API_KEY}`,
       )
       .then((response) => {
         setData(response.data.items[0].id.videoId);
