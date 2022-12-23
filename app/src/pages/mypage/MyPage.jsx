@@ -17,20 +17,22 @@ export default function MyPage({ userId }) {
 
   return (
     <main>
-      <S.UserProfile>
-        <Avartar onClick={handleModal} />
-        {show && <AvartarModal onClick={handleModal} />}
-        <S.UserId>{userId}</S.UserId>
-      </S.UserProfile>
-      <hr />
-      <section>
-        <S.TabWrapper>
-          <S.TabMenu>내 게시글</S.TabMenu>
-          {/*HeartIcon(임시)*/}
-          <S.TabMenu>♡ 좋아요</S.TabMenu>
-        </S.TabWrapper>
-        <BoardList />
-      </section>
+      <S.MyPageWrapper>
+        <S.ProfileWrapper>
+          <Avartar onClick={handleModal} />
+          {show && <AvartarModal onClick={handleModal} />}
+          <S.UserId>{userId}</S.UserId>
+        </S.ProfileWrapper>
+        <S.Hr />
+        <S.Wrapper>
+          <S.TabWrapper>
+            <S.TabMenu>내 게시글</S.TabMenu>
+            {/*HeartIcon(임시)*/}
+            <S.TabMenu>♡ 좋아요</S.TabMenu>
+          </S.TabWrapper>
+          <BoardList />
+        </S.Wrapper>
+      </S.MyPageWrapper>
     </main>
   );
 }
