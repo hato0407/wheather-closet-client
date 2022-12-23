@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 80rem;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 `;
 
 export const Nav = styled.nav`

@@ -5,6 +5,7 @@ import Avartar from '../../components/avatar/Avatar';
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -25,32 +26,37 @@ export default function Header() {
             <S.MenuItem>
               <Link to="/write">작성하기</Link>
             </S.MenuItem>
-            <S.MenuItemAuth>
-              <S.MenuItem>
-                <Link to="/login">로그인</Link>
-              </S.MenuItem>
-              <S.MenuItem>
-                <Link to="/register">회원가입</Link>
-              </S.MenuItem>
-            </S.MenuItemAuth>
+            {!isLogin && (
+              <S.MenuItemAuth>
+                <S.MenuItem>
+                  <Link to="/login">로그인</Link>
+                </S.MenuItem>
+                <S.MenuItem>
+                  <Link to="/register">회원가입</Link>
+                </S.MenuItem>
+              </S.MenuItemAuth>
+            )}
           </S.Menu>
         </S.Nav>
-        <S.UserMenu>
-          <Avartar onClick={handleToggle} />
-          {toggle && (
-            <S.UserMenuWrapper>
-              <ul onClick={handleToggle}>
-                <S.UserMenuItem>
-                  <Link to="/mypage">마이페이지</Link>
-                </S.UserMenuItem>
-                <S.UserMenuItem>
-                  <Link to="/account">계정관리</Link>
-                </S.UserMenuItem>
-                <S.UserMenuItem>로그아웃</S.UserMenuItem>
-              </ul>
-            </S.UserMenuWrapper>
-          )}
-        </S.UserMenu>
+        {/* TODO isLogin true로 변경하기*/}
+        {!isLogin && (
+          <S.UserMenu>
+            <Avartar onClick={handleToggle} />
+            {toggle && (
+              <S.UserMenuWrapper>
+                <ul onClick={handleToggle}>
+                  <S.UserMenuItem>
+                    <Link to="/mypage">마이페이지</Link>
+                  </S.UserMenuItem>
+                  <S.UserMenuItem>
+                    <Link to="/account">계정관리</Link>
+                  </S.UserMenuItem>
+                  <S.UserMenuItem>로그아웃</S.UserMenuItem>
+                </ul>
+              </S.UserMenuWrapper>
+            )}
+          </S.UserMenu>
+        )}
       </S.HeaderWrapper>
     </header>
   );
