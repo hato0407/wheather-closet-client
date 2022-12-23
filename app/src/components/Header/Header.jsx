@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <S.HeaderLayout>
+    <header>
       <S.HeaderWrapper>
         {/* TODO 로고 컴포넌트 만들기 */}
         <span>
@@ -49,6 +49,6 @@ export default function Header() {
           )}
         </S.UserMenu>
       </S.HeaderWrapper>
-    </S.HeaderLayout>
+    </header>
   );
 }
