@@ -5,8 +5,8 @@ export default function Clothes() {
   const [temperature, setTemperature] = useState();
   return (
     <Container>
-      <TextBox>안녕하세요</TextBox>
-      <ClothesBox>반갑습니다</ClothesBox>
+      <TextBox></TextBox>
+      <ClothesBox></ClothesBox>
     </Container>
   );
 }
