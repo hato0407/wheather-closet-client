@@ -54,7 +54,7 @@ export const UserMenu = styled.div`
 export const UserMenuWrapper = styled.div`
   position: absolute;
   width: 6.25rem;
-  height: 16.875rem;
+  height: 6.875rem;
   right: 0;
   top: 50px;
   padding: 1.125rem 0.5rem;
