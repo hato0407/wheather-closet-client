@@ -25,7 +25,7 @@ export const Container = styled.div`
   max-width: 580px;
   height: 310px;
   background-color: #ffffff;
-  box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 10px 10px 1px #0000004d;
 `;
 
 export const Wrapper = styled.div`
@@ -47,7 +47,11 @@ export const SaveButton = styled.button`
   bottom: 30px;
   padding: 6px 10px;
   border: 1px solid #000;
-  border-radius: 30px;
+  border-radius: 20px;
+
+  :hover {
+    background-color: #eaeaea;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -70,13 +74,21 @@ export const Label = styled.label`
   text-align: center;
   border: 1px solid #000;
   cursor: pointer;
+
+  :hover {
+    background-color: #eaeaea;
+  }
 `;
 
-export const Button = styled.button`
+export const DeleteButton = styled.button`
   display: block;
   width: 100%;
   margin-top: 18px;
   font-size: 1rem;
   padding: 14px 12px;
   border: 1px solid #000;
+
+  :hover {
+    background-color: #eaeaea;
+  }
 `;

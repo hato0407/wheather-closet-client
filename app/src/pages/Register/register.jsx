@@ -23,7 +23,6 @@ export default function Register() {
             <Title>날씨 옷장</Title>
             <SubTitle>날씨에 맞는 옷을 추천해드려요.</SubTitle>
             <RButton>구글로 로그인</RButton>
-            <DividerLine />
           </TitleWrapper>
           <Input
             type="email"
@@ -48,7 +47,7 @@ export default function Register() {
 
           <Input
             type="text"
-            {...register('email', { required: true, maxLength: 10 })}
+            {...register('nickname', { required: true, maxLength: 10 })}
             placeholder="닉네임"
           />
 

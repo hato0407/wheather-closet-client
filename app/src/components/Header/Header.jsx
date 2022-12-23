@@ -22,6 +22,9 @@ export default function Header() {
             <S.MenuItem>
               <a href="/board">옷차림 특파원</a>
             </S.MenuItem>
+            <S.MenuItem>
+              <Link to="/write">작성하기</Link>
+            </S.MenuItem>
             <S.MenuItemAuth>
               <S.MenuItem>
                 <Link to="/login">로그인</Link>
