@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './MyPage.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
-import BoardList from '../../components/Board/BoardList';
+import BoardList from '../../components/board/BoardList';
 
 MyPage.defaultProps = {
   userId: 'clother',
