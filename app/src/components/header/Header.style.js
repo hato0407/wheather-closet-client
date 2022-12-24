@@ -38,7 +38,7 @@ export const MenuItemAuth = styled.div`
     display: inline-block;
     margin-left: 1.25rem;
     padding: 0.75rem 1rem;
-    background-color: #00e5ff;
+    background-color: #eaeaea;
 `;
 
 export const UserMenu = styled.div`

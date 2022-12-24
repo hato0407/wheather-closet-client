@@ -4,49 +4,47 @@ export const MyPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
 `;
 
-export const ProfileWrapper = styled.section`
+export const Section = styled.section`
   display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 1100px;
-  margin-top: 2rem;
-`;
-
-export const UserId = styled.span`
-  margin-left: 24px;
-  font-size: 1.5rem;
-  font-weight: bold;
-`;
-
-export const Hr = styled.hr`
   width: 100%;
-  max-width: 1100px;
 `;
 
-export const Wrapper = styled.section`
+export const AvatarWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-`;
+  justify-content: flex-start;
+  align-content: center;
+  gap: 2.5rem;
 
-export const TabWrapper = styled.div`
-  margin-bottom: 30px;
-  text-align: center;
-  cursor: pointer;
-
-  > span + span {
-    margin-left: 12vw;
+  > span {
+    align-self: center;
   }
 `;
 
-export const TabMenu = styled.span`
-  font-size: 1.125rem;
-  font-weight: bold;
+export const ContentsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-content: center;
+  gap: 1.5rem;
+`;
+
+export const TabMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 12vh;
+
+  > span {
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+
+    :hover {
+      border-bottom: 1px solid black;
+    }
+  }
 `;

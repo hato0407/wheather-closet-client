@@ -18,20 +18,27 @@ export default function MyPage({ userId }) {
   return (
     <main>
       <S.MyPageWrapper>
-        <S.ProfileWrapper>
-          <Avartar onClick={handleModal} />
-          {show && <AvartarModal onClick={handleModal} />}
-          <S.UserId>{userId}</S.UserId>
-        </S.ProfileWrapper>
-        <S.Hr />
-        <S.Wrapper>
-          <S.TabWrapper>
-            <S.TabMenu>내 게시글</S.TabMenu>
-            {/*HeartIcon(임시)*/}
-            <S.TabMenu>♡ 좋아요</S.TabMenu>
-          </S.TabWrapper>
-          <BoardList />
-        </S.Wrapper>
+        <S.Section>
+          {/*  */}
+          <S.AvatarWrapper>
+            <Avartar onClick={handleModal} />
+            {show && <AvartarModal onClick={handleModal} />}
+            <span>{userId}</span>
+          </S.AvatarWrapper>
+        </S.Section>
+        {/* TODO themeProvieder 사용 (hr, h*, wrapper) */}
+        <hr style={{ width: '100%', maxWidth: '1100px' }} />
+        <S.Section>
+          {/*  */}
+          <S.ContentsWrapper>
+            <S.TabMenu>
+              <span>내 게시글</span>
+              {/*HeartIcon(임시)*/}
+              <span>♡ 좋아요</span>
+            </S.TabMenu>
+            <BoardList />
+          </S.ContentsWrapper>
+        </S.Section>
       </S.MyPageWrapper>
     </main>
   );
