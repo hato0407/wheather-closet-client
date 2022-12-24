@@ -41,10 +41,6 @@ export const ProfileWrapper = styled.div`
   width: 100%;
   max-width: 60rem;
   padding: 2.5rem 0;
-
-  > div {
-    justify-content: flex-start;
-  }
 `;
 
 export const NickNameWrapper = styled.div`

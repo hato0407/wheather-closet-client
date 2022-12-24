@@ -27,7 +27,7 @@ export default function MyPage({ userId }) {
           </S.AvatarWrapper>
         </S.Section>
         {/* TODO themeProvieder 사용 (hr, h*, wrapper) */}
-        <hr style={{ width: '100%', maxWidth: '1100px' }} />
+        <hr style={{ width: '100%', maxWidth: '60rem' }} />
         <S.Section>
           {/*  */}
           <S.ContentsWrapper>

@@ -5,12 +5,12 @@ export const MyPageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 5.625rem;
 `;
 
 export const Section = styled.section`
   display: flex;
-  max-width: 1100px;
+  max-width: 60rem;
   width: 100%;
 `;
 
@@ -28,7 +28,6 @@ export const AvatarWrapper = styled.div`
 export const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-content: center;
   gap: 1.5rem;
 `;
