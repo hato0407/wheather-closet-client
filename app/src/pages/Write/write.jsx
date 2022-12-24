@@ -3,11 +3,13 @@ import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { clothsOptions } from './ClothsOptions';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
   const [preview, setPreview] = useState('');
   const avatar = watch('avatar');
+  const animatedComponents = makeAnimated(); // 옷 종류 태그 선택 애니메이션
 
   useEffect(() => {
     if (avatar && avatar.length > 0) {
@@ -20,20 +22,6 @@ export default function Write() {
     alert(JSON.stringify(data));
   };
 
-  const animatedComponents = makeAnimated();
-
-  const clothsOptions = [
-    { value: 'padding', label: '패딩', isFixed: true },
-    { value: 'coat', label: '코트', isFixed: true },
-    { value: 'jacket', label: '자켓' },
-    { value: 'suit', label: '정장' },
-    { value: 'gloves', label: '장갑' },
-    { value: 'muffler', label: '목도리' },
-    { value: 'slacks', label: '슬랙스' },
-    { value: 'jeans', label: '청바지' },
-    { value: 'sweatsuit', label: '트레이닝복' },
-  ];
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <ContainerWrapper>
@@ -41,19 +29,17 @@ export default function Write() {
           <SubTitle>새 게시물 만들기</SubTitle>
           <ContainerBox>
             <Container2>
-              <img src={preview} alt="select_image" />
-              <SeleteButton>
+              <img src={preview} alt="select_image" width={500} height={400} />
+              <SeleteButton type="button">
                 <Label for="picture">사진 선택하기</Label>
               </SeleteButton>
-              <Imgbox>
-                <InputImg
-                  {...register('avatar')}
-                  id="picture"
-                  name="avatar"
-                  type="file"
-                  accept="image/*"
-                />
-              </Imgbox>
+              <InputImg
+                {...register('avatar')}
+                id="picture"
+                name="avatar"
+                type="file"
+                accept="image/*"
+              />
             </Container2>
             <Container2>
               <UserName>
@@ -86,12 +72,19 @@ export default function Write() {
               <UserWrite>
                 <Description>
                   옷 종류 태그
-                  <Select
-                    closeMenuOnSelect={false}
-                    components={animatedComponents}
+                  <Controller
+                    name="clothsType"
+                    render={({ field }) => (
+                      <Select
+                        {...field}
+                        closeMenuOnSelect={false}
+                        options={clothsOptions}
+                        components={animatedComponents}
+                        isMulti
+                      />
+                    )}
+                    control={control}
                     defaultValue=""
-                    isMulti
-                    options={clothsOptions}
                   />
                 </Description>
               </UserWrite>
@@ -194,10 +187,6 @@ const Button = styled.button`
   opacity: 0.7;
 `;
 
-const Imgbox = styled.div`
-  width: 400px;
-  height: 400px;
-`;
 const InputImg = styled.input`
   width: 0;
   height: 0;
