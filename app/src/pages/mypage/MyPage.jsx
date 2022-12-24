@@ -9,8 +9,10 @@ MyPage.defaultProps = {
 };
 
 export default function MyPage({ userId }) {
+  // Avartar 변경 State
   const [show, setShow] = useState(false);
 
+  // Avartar 변경 모달창
   const handleModal = () => {
     setShow(!show);
   };
@@ -19,7 +21,6 @@ export default function MyPage({ userId }) {
     <main>
       <S.MyPageWrapper>
         <S.Section>
-          {/*  */}
           <S.AvatarWrapper>
             <Avartar onClick={handleModal} />
             {show && <AvartarModal onClick={handleModal} />}
@@ -29,7 +30,6 @@ export default function MyPage({ userId }) {
         {/* TODO themeProvieder 사용 (hr, h*, wrapper) */}
         <hr style={{ width: '100%', maxWidth: '60rem' }} />
         <S.Section>
-          {/*  */}
           <S.ContentsWrapper>
             <S.TabMenu>
               <span>내 게시글</span>
