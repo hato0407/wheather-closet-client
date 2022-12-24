@@ -3,6 +3,7 @@ import * as S from './MyPage.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
 import BoardList from '../../components/board/BoardList';
+import SkeletonBoard from '../../components/skeletonUI/SkeletonBoard';
 
 MyPage.defaultProps = {
   userId: 'clother',
@@ -11,9 +12,23 @@ MyPage.defaultProps = {
 export default function MyPage({ userId }) {
   // Avartar 변경 State
   const [show, setShow] = useState(false);
+  const TAB_MENU = ['내 게시글', '좋아요'];
+
+  // 로딩 State
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Tab State
+  const [clickedTab, setClickedTab] = useState('내 게시글');
+
+  // Handle Event
+
+  // Tab 클릭 시 변경
+  const handleClickTab = (tab) => {
+    setClickedTab(tab);
+  };
 
   // Avartar 변경 모달창
-  const handleModal = () => {
+  const handleToggleModal = () => {
     setShow(!show);
   };
 
@@ -22,8 +37,8 @@ export default function MyPage({ userId }) {
       <S.MyPageWrapper>
         <S.Section>
           <S.AvatarWrapper>
-            <Avartar onClick={handleModal} />
-            {show && <AvartarModal onClick={handleModal} />}
+            <Avartar onClick={handleToggleModal} />
+            {show && <AvartarModal onClick={handleToggleModal} />}
             <span>{userId}</span>
           </S.AvatarWrapper>
         </S.Section>
@@ -32,11 +47,17 @@ export default function MyPage({ userId }) {
         <S.Section>
           <S.ContentsWrapper>
             <S.TabMenu>
-              <span>내 게시글</span>
-              {/*HeartIcon(임시)*/}
-              <span>♡ 좋아요</span>
+              {TAB_MENU.map((item, idx) => (
+                <S.TabItem
+                  key={idx}
+                  active={clickedTab === item}
+                  onClick={() => handleClickTab(item)}
+                >
+                  {item}
+                </S.TabItem>
+              ))}
             </S.TabMenu>
-            <BoardList />
+            {clickedTab === '내 게시글' ? <BoardList /> : <SkeletonBoard />}
           </S.ContentsWrapper>
         </S.Section>
       </S.MyPageWrapper>
