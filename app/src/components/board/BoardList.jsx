@@ -3,7 +3,7 @@ import * as S from './BoardList.style';
 export default function BoardList() {
   return (
     <S.ListLayout>
-      {[0, 1, 2, 3, 4].map((item) => (
+      {new Array(9).fill(1).map((item) => (
         <ListItem key={item} />
       ))}
     </S.ListLayout>
@@ -22,10 +22,7 @@ function ListItem({ heartCount, clothesImage }) {
         <S.Clothes>
           <S.ClothesImage src={clothesImage} alt="" />
         </S.Clothes>
-        <S.HeartWrapper>
-          <S.HeartIcon>♡</S.HeartIcon>
-          <S.HeartCount>{heartCount}</S.HeartCount>
-        </S.HeartWrapper>
+        {/* HeartIcon */}
       </S.ItemWrapper>
     </li>
   );
