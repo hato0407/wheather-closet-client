@@ -1,14 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import jacket from '../../assets/Icons/jacket.png';
 
 export default function WeatherView() {
-  const [temperature, setTemperature] = useState();
+  const [temperature, setTemperature] = useState('');
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState('');
-  const [icon, setIcon] = useState('');
-  const [place, setPlace] = useState('');
+  const [icon, setIcon] = useState('01d');
+  const [place, setPlace] = useState('seoul');
   const API_KEY = 'a360461662224b3d0ea83d05566bf189';
   const iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
 
@@ -67,6 +67,20 @@ export default function WeatherView() {
       <City>{city}</City>
       <Icon src={iconUrl} />
       <Weather>{weather}</Weather>
+      <ClothesContainer>
+        <TextBox>
+          {temperature}도
+          <Text>
+            목도리, 귀마개 등 방한용품 필수! 보온내의가 필요할 때 입니다!
+          </Text>
+        </TextBox>
+        <ClothesBox>
+          <ClotheIcon>
+            <img src={jacket} />
+          </ClotheIcon>
+          두꺼운 코트, 패딩 등
+        </ClothesBox>
+      </ClothesContainer>
     </Container>
   );
 }
@@ -121,4 +135,41 @@ const SearchButton = styled.button`
   width: 275px;
   height: 52px;
   margin: 2vh 0;
+`;
+const ClothesContainer = styled.div`
+  display: flex;
+  background-color: #f5f5f5;
+  align-items: center;
+  width: 55vw;
+  height: 40vh;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 20px;
+`;
+const TextBox = styled.div`
+  width: 18vw;
+  background-color: #213e6a;
+  color: white;
+  height: 25vh;
+  border-radius: 20px;
+  text-align: center;
+  padding: 5vh 2vw;
+  font-size: 32px;
+`;
+const ClothesBox = styled.div`
+  display: flex;
+  align-items: center;
+  width: 23vw;
+  background-color: #4b76b6;
+  color: white;
+  height: 25vh;
+  border-radius: 20px;
+  padding: 3vh 2vw;
+`;
+const Text = styled.div`
+  font-size: 14px;
+  padding-top: 4vh;
+`;
+const ClotheIcon = styled.div`
+  padding-right: 1vw;
 `;
