@@ -1,7 +1,7 @@
 import Avartar from './Avatar';
 import * as S from './AvatarModal.style';
 
-export default function AvartarModal({ onClick }) {
+export default function AvartarModal({ toggleModal }) {
   return (
     <S.AvartarModalLayout>
       <S.Container>
@@ -13,8 +13,8 @@ export default function AvartarModal({ onClick }) {
             <S.DeleteButton>이미지 삭제</S.DeleteButton>
           </S.Buttons>
         </S.Wrapper>
-        <S.SaveButton onClick={onClick}>저장</S.SaveButton>
-        <S.CloseButton onClick={onClick}>X</S.CloseButton>
+        <S.SaveButton onClick={toggleModal}>저장</S.SaveButton>
+        <S.CloseButton onClick={toggleModal}>X</S.CloseButton>
       </S.Container>
     </S.AvartarModalLayout>
   );

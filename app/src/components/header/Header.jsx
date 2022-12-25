@@ -4,11 +4,11 @@ import * as S from './Header.style';
 import Avartar from '../../components/avatar/Avatar';
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
 
-  const handleToggle = () => {
-    setToggle(!toggle);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
 
   return (
@@ -41,10 +41,10 @@ export default function Header() {
         {/* TODO isLogin true로 변경하기*/}
         {!isLogin && (
           <S.UserMenu>
-            <Avartar onClick={handleToggle} />
-            {toggle && (
+            <Avartar toggleMenu={toggleMenu} />
+            {showMenu && (
               <S.UserMenuWrapper>
-                <ul onClick={handleToggle}>
+                <ul onClick={toggleMenu}>
                   <S.UserMenuItem>
                     <Link to="/mypage">마이페이지</Link>
                   </S.UserMenuItem>

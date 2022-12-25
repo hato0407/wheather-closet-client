@@ -11,7 +11,7 @@ MyPage.defaultProps = {
 
 export default function MyPage({ userId }) {
   // Avartar 변경 State
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const TAB_MENU = ['내 게시글', '좋아요'];
 
   // 로딩 State
@@ -28,8 +28,8 @@ export default function MyPage({ userId }) {
   };
 
   // Avartar 변경 모달창
-  const handleToggleModal = () => {
-    setShow(!show);
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   return (
@@ -37,8 +37,8 @@ export default function MyPage({ userId }) {
       <S.MyPageWrapper>
         <S.Section>
           <S.AvatarWrapper>
-            <Avartar onClick={handleToggleModal} />
-            {show && <AvartarModal onClick={handleToggleModal} />}
+            <Avartar toggleModal={toggleModal} />
+            {showModal && <AvartarModal toggleModal={toggleModal} />}
             <span>{userId}</span>
           </S.AvatarWrapper>
         </S.Section>
