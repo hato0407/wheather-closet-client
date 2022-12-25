@@ -39,6 +39,7 @@ export const Wrapper = styled.div`
     background: gray;
     border-radius: 70%;
     overflow: hidden;
+    cursor: default;
   }
 `;
 
