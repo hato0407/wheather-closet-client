@@ -4,8 +4,8 @@ import * as S from '../../components/board/BoardList.style';
 export default function BoardList() {
   return (
     <S.ListLayout>
-      {[0, 1, 2].map((item) => (
-        <ListItem key={item} />
+      {[0, 1, 2].map((item, idx) => (
+        <ListItem key={idx} />
       ))}
     </S.ListLayout>
   );

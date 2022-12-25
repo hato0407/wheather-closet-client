@@ -3,8 +3,8 @@ import * as S from './BoardList.style';
 export default function BoardList() {
   return (
     <S.ListLayout>
-      {new Array(9).fill(1).map((item) => (
-        <ListItem key={item} />
+      {new Array(9).fill(1).map((item, idx) => (
+        <ListItem key={idx} />
       ))}
     </S.ListLayout>
   );
