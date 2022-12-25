@@ -10,7 +10,7 @@ Account.defaultProps = {
 
 export default function Account({ nickname, userEmail }) {
   // Avartar 변경 State
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   // 새로운 비밀번호 State
   const [password, setPassword] = useState('');
@@ -50,8 +50,8 @@ export default function Account({ nickname, userEmail }) {
   };
 
   // Avartar 변경 모달창
-  const handleModal = () => {
-    setShow(!show);
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   const handleDeleteAccount = () => {
@@ -69,8 +69,8 @@ export default function Account({ nickname, userEmail }) {
           <h2>프로필</h2>
           <hr />
           <S.ProfileWrapper>
-            <Avartar onClick={handleModal} />
-            {show && <AvartarModal onClick={handleModal} />}
+            <Avartar toggleModal={toggleModal} />
+            {showModal && <AvartarModal toggleModal={toggleModal} />}
             <S.UserFormWrapper>
               <form>
                 <S.Label>닉네임</S.Label>
