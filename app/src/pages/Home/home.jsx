@@ -1,21 +1,20 @@
-import styled from 'styled-components';
-import WeatherView from '../../components/Weather/weather';
-import Youtube from './youtube';
-import View from './view';
+import WeatherView from '../../components/weather/weather';
+import Youtube from '../../components/youtube/youtube';
+import View from '../../components/preview/preview';
+import Clothes from '../../components/clothes/clothes';
+import Search from '../../components/search/search';
+import * as S from './home.style';
+
 export default function Home() {
   return (
-    <Container>
-      <WeatherView />
-      <View />
-      <Youtube />
-    </Container>
+    <S.Container>
+      <S.ContentWrapper>
+        <Search />
+        <WeatherView />
+        <Clothes />
+        <View />
+        <Youtube />
+      </S.ContentWrapper>
+    </S.Container>
   );
 }
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding: 5vh 20vw;
-  justify-content: center;
-  align-items: center;
-`;
