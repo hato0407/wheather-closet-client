@@ -26,7 +26,13 @@ export default function Register() {
           </L.TitleWrapper>
           <L.Input
             type="email"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+              minLength: {
+                value: 1,
+                message: '이메일을 입력해주세요.',
+              },
+            })}
             placeholder="이메일 주소"
           />
 
@@ -41,6 +47,7 @@ export default function Register() {
             {...register('password_confirm', {
               required: true,
               validate: (value) => value === password.current,
+              message: '비밀번호가 일치하지 않습니다.',
             })}
             placeholder="비밀번호 확인"
           />
@@ -54,6 +61,7 @@ export default function Register() {
           <L.LButton type="submit">가입</L.LButton>
 
           {errors.password_confirm && (
+            //<L.Description>{errors?.password_confirm?.message}</L.Description>
             <L.Description>비밀번호가 일치하지 않습니다.</L.Description>
           )}
         </L.Container2>
