@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import styled from 'styled-components';
 import * as L from './Write.style';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';

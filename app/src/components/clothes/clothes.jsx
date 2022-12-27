@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as S from './clothes.style';
+import * as S from './Clothes.style';
 import * as action from '../../redux/clothes';
 import axios from 'axios';
 
