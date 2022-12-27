@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { API } from '../../config/config';
 import * as action from '../../redux/weather';
 import * as S from './search.style';
@@ -14,7 +14,7 @@ export default function Search() {
     setPlace(event.target.value);
   }
 
-  function handleClickForLatAndLon() {
+  const handleClickForLatAndLon = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
@@ -31,9 +31,8 @@ export default function Search() {
           dispatch(action.SETICON(response.data.weather[0].icon));
         });
     });
-  }
-
-  function hanleClickForCity() {
+  };
+  const hanleClickForCity = () => {
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${API_KEY}`,
@@ -46,7 +45,7 @@ export default function Search() {
         dispatch(action.SETWEATHER(response.data.weather[0].main));
         dispatch(action.SETICON(response.data.weather[0].icon));
       });
-  }
+  };
 
   return (
     <S.SearchContainer>

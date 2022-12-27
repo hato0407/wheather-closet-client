@@ -1,7 +1,7 @@
-import WeatherView from '../../components/weather/Weather';
-import Youtube from '../../components/youtube/Youtube';
+import WeatherView from '../../components/weather/weather';
+import Youtube from '../../components/youtube/youtube';
 import View from '../../components/preview/preview';
-import Clothes from '../../components/clothes/Clothes';
+import Clothes from '../../components/clothes/clothes';
 import Search from '../../components/search/search';
 import * as S from './Home.style';
 
