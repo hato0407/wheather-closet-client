@@ -32,15 +32,20 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
 
-  > div:first-child {
-    width: 150px;
-    height: 150px;
-    background: gray;
-    border-radius: 70%;
-    overflow: hidden;
-    cursor: default;
-  }
+export const Preview = styled.div`
+  width: 150px;
+  height: 150px;
+  background: gray;
+  border-radius: 70%;
+  overflow: hidden;
+`;
+
+export const PreviewImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const SaveButton = styled.button`
