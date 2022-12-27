@@ -2,6 +2,7 @@ import { useState } from 'react';
 import * as S from './Account.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
+import { validatePassword, checkPassword } from '../../utils/validation';
 
 Account.defaultProps = {
   nickname: 'clother',
@@ -15,38 +16,25 @@ export default function Account({ nickname, userEmail }) {
   // 새로운 비밀번호 State
   const [password, setPassword] = useState('');
   const [passwordMessage, setPasswordMessage] = useState('');
-  const [passwordCheck, setPasswordCheck] = useState('');
+  const [rePassword, setRePassword] = useState('');
   const [passwordCheckMessage, setPasswordCheckMessage] = useState('');
-
-  // 비밀번호 정규식
-  const passwordRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-  const regExp = /\s/g;
 
   // TODO input Debouncing 처리하기
   const handlePassword = (e) => {
     const password = e.target.value;
 
-    if (regExp.test(password)) {
-      setPasswordMessage('공백을 제거해주세요');
-    } else if (!passwordRegExp.test(password)) {
-      setPasswordMessage('영문, 숫자, 특수문자 혼합하여 8~25자');
-    } else {
-      setPassword(password);
-      setPasswordMessage('');
-    }
+    const message = validatePassword(password);
+    setPasswordMessage(message);
+    setPassword(password);
   };
 
   // 비밀번호 재확인
   const handlePasswordCheck = (e) => {
     const passwordCheck = e.target.value;
 
-    setPasswordCheck(passwordCheck);
-
-    if (passwordCheck !== password) {
-      setPasswordCheckMessage('비밀번호가 일치하지 않습니다');
-    } else {
-      setPasswordCheckMessage('');
-    }
+    const message = checkPassword(password, passwordCheck);
+    setPasswordCheckMessage(message);
+    setRePassword(passwordCheck);
   };
 
   // Avartar 변경 모달창
@@ -99,7 +87,7 @@ export default function Account({ nickname, userEmail }) {
                       <S.Input
                         type="password"
                         id="password-check"
-                        defaultValue={passwordCheck}
+                        defaultValue={rePassword}
                         onChange={handlePasswordCheck}
                       />
                       <S.Message>{passwordCheckMessage}</S.Message>
