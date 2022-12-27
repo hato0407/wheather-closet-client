@@ -41,7 +41,7 @@ export default function Header() {
         {/* TODO isLogin true로 변경하기*/}
         {!isLogin && (
           <S.UserMenu>
-            <Avartar toggleMenu={toggleMenu} />
+            <Avartar toggle={toggleMenu} />
             {showMenu && (
               <S.UserMenuWrapper>
                 <ul onClick={toggleMenu}>
