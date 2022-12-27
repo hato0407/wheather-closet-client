@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API } from '../../config/config';
 import * as S from './youtube.style';
+import { useSelector } from 'react-redux';
 
 export default function Youtube() {
   const [data, setData] = useState('');
@@ -9,10 +10,13 @@ export default function Youtube() {
   const API_KEY = API.YOUTUBE_API_KEY;
   const Url = API.YOUTUBE_EMBED + data;
   const SecondUrl = API.YOUTUBE_EMBED + secondData;
+  const name = useSelector((state) => state.clothes.iconName);
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=padding&type=video&key=${API_KEY}`,
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${
+          name + '관리하는 법'
+        }&type=video&key=${API_KEY}`,
       )
       .then((response) => {
         setData(response.data.items[0].id.videoId);

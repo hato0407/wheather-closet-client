@@ -34,7 +34,7 @@ export default function WeatherView() {
     <S.WeatherContainer>
       <S.City>{city}</S.City>
       <S.WeatherWrap>
-        <S.Temperature>{temperature}</S.Temperature>
+        <S.Temperature>{temperature + '°C'}</S.Temperature>
         <S.Icon src={iconUrl} />
         <S.Weather>{weather}</S.Weather>
       </S.WeatherWrap>
