@@ -37,8 +37,8 @@ export default function MyPage({ userId }) {
       <S.MyPageWrapper>
         <S.Section>
           <S.AvatarWrapper>
-            <Avartar toggleModal={toggleModal} />
-            {showModal && <AvartarModal toggleModal={toggleModal} />}
+            <Avartar toggle={toggleModal} />
+            {showModal && <AvartarModal toggle={toggleModal} />}
             <span>{userId}</span>
           </S.AvatarWrapper>
         </S.Section>

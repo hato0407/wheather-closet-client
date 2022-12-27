@@ -69,8 +69,8 @@ export default function Account({ nickname, userEmail }) {
           <h2>프로필</h2>
           <hr />
           <S.ProfileWrapper>
-            <Avartar toggleModal={toggleModal} />
-            {showModal && <AvartarModal toggleModal={toggleModal} />}
+            <Avartar toggle={toggleModal} />
+            {showModal && <AvartarModal toggle={toggleModal} />}
             <S.UserFormWrapper>
               <form>
                 <S.Label>닉네임</S.Label>
