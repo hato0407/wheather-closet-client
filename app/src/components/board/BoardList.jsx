@@ -1,6 +1,23 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import * as S from './BoardList.style';
 
 export default function BoardList() {
+  const [boardData, setBoardData] = useState([]);
+
+  const getBoardData = async () => {
+    try {
+      const result = await axios('');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  //
+  useEffect(() => {
+    getBoardData();
+  }, []);
+
   return (
     <S.ListLayout>
       {new Array(9).fill(1).map((item, idx) => (

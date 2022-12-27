@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Avartar from './Avatar';
 import * as S from './AvatarModal.style';
+import defalutProgfile from '../../assets/images/default-profile.png';
 
 export default function AvartarModal({ toggle }) {
   const [previewAvartar, setPreviewAvartar] = useState(null);
@@ -33,7 +33,12 @@ export default function AvartarModal({ toggle }) {
     <S.AvartarModalLayout>
       <S.Container>
         <S.Wrapper>
-          <Avartar previewAvartar={previewAvartar} />
+          <S.Preview>
+            <S.PreviewImage
+              src={previewAvartar ? previewAvartar : defalutProgfile}
+              alt="이미지"
+            />
+          </S.Preview>
           <S.Buttons>
             <S.Label htmlFor="upload">이미지 업로드</S.Label>
             <input
