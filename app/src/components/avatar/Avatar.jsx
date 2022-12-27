@@ -1,11 +1,11 @@
 import * as S from './Avatar.style';
 import defalutProgfile from '../../assets/images/default-profile.png';
 
-export default function Avartar({ toggle, previewAvartar }) {
+export default function Avartar({ toggle }) {
   return (
     <S.AvatarLayout>
       <S.AvatarImage
-        src={previewAvartar ? previewAvartar : defalutProgfile}
+        src={defalutProgfile}
         alt="프로필 이미지"
         onClick={toggle}
       />
