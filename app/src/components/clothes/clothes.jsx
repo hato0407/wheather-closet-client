@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as S from './clothes.style';
 import * as action from '../../redux/clothes';
-import jacket from '../../assets/icon/jacket.png';
-
+import { DescTemperature } from '../../config/config';
 export default function Clothes() {
   const temperature = useSelector((state) => state.weather.temperature);
   const dispatch = useDispatch();
+  useEffect(() => {
+    for (let i = 1; i < 9; i++) {
+      if (temperature < DescTemperature[i].temperature) {
+        dispatch(action.SETDESCTEM(DescTemperature[i].desc));
+        dispatch(action.SETDESCCLOTHE(DescTemperature[i].clothes));
+      }
+    }
+  });
+  const descClothes = useSelector((state) => state.clothes.descClothes);
   const descTem = useSelector((state) => state.clothes.descTem);
   return (
     <S.ClothesContainer>
@@ -15,10 +23,8 @@ export default function Clothes() {
         <S.Text>{descTem}</S.Text>
       </S.TextBox>
       <S.ClothesBox>
-        <S.ClotheIcon>
-          <img src={jacket} />
-        </S.ClotheIcon>
-        두꺼운 코트, 패딩 등
+        <S.ClotheIcon></S.ClotheIcon>
+        {descClothes}
       </S.ClothesBox>
     </S.ClothesContainer>
   );
