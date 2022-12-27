@@ -1,9 +1,9 @@
-import WeatherView from '../../components/weather/weather';
-import Youtube from '../../components/youtube/youtube';
+import WeatherView from '../../components/weather/Weather';
+import Youtube from '../../components/youtube/Youtube';
 import View from '../../components/preview/preview';
-import Clothes from '../../components/clothes/clothes';
+import Clothes from '../../components/clothes/Clothes';
 import Search from '../../components/search/search';
-import * as S from './home.style';
+import * as S from './Home.style';
 
 export default function Home() {
   return (
