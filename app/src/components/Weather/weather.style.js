@@ -9,6 +9,7 @@ export const WeatherContainer = styled.div`
   padding: 2vh 2vw;
   box-sizing: border-box;
   margin: 5vh 0;
+  border-radius: 20px;
 `;
 export const WeatherWrap = styled.span`
   position: relative;
@@ -16,7 +17,7 @@ export const WeatherWrap = styled.span`
   flex-direction: column;
   background-color: white;
   border: solid 1px #e8ebee;
-  border-radius: 25px;
+  border-radius: 20px;
   align-items: center;
   padding: 5vh 20vw;
 `;

@@ -24,9 +24,10 @@ export default function Youtube() {
   return (
     <S.Container>
       <S.Text>오늘 입은 옷 관리하는 꿀팁은?</S.Text>
-      <S.Item src={Url} frameborder="0" />
-      <S.Desc></S.Desc>
-      <S.Item src={SecondUrl} frameborder="0" />
+      <S.VideoWrap>
+        <S.Item src={Url} frameborder="0" />
+        <S.Item src={SecondUrl} frameborder="0" />
+      </S.VideoWrap>
     </S.Container>
   );
 }
