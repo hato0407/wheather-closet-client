@@ -14,9 +14,7 @@ export default function Youtube() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${
-          name + '관리하는 법'
-        }&type=video&key=${API_KEY}`,
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${name}&type=video&key=${API_KEY}`,
       )
       .then((response) => {
         setData(response.data.items[0].id.videoId);
