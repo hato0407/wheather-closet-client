@@ -2,6 +2,7 @@ import * as L from './Register.style';
 import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import GoogleButton from '../login/googleLogin';
 
 export default function Register() {
   const {
@@ -22,7 +23,9 @@ export default function Register() {
           <L.TitleWrapper>
             <L.Title>날씨 옷장</L.Title>
             <L.SubTitle>날씨에 맞는 옷을 추천해드려요.</L.SubTitle>
-            <L.RButton>구글로 로그인</L.RButton>
+            <L.Description>
+              <GoogleButton></GoogleButton>
+            </L.Description>
           </L.TitleWrapper>
           <L.Input
             type="email"
