@@ -7,11 +7,6 @@ export const SearchContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
 `;
-export const Title = styled.div`
-  padding-bottom: 5vh;
-  font-size: 2rem;
-  text-align: center;
-`;
 export const Input = styled.input`
   border-radius: 25px;
   width: 55vw;
@@ -32,4 +27,9 @@ export const SearchButton = styled.button`
   width: 275px;
   height: 52px;
   margin: 2vh 0;
+`;
+export const Logo = styled.img`
+  width: 827px;
+  height: 500px;
+  margin-bottom: 10vh;
 `;
