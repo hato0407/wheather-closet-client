@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/home/home';
-import Login from './pages/Login/Login';
+import Home from './pages/Home/home';
+import Login from './pages/Login/login';
 import MyPage from './pages/mypage/MyPage';
-import Register from './pages/Register/Register';
+import Register from './pages/Register/register';
 import Account from './pages/account/Account';
 import NotFound from './pages/notfound/NotFound';
-import Write from './pages/Write/Write';
+import Write from './pages/Write/write';
+import Board from './pages/Board/board';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/account" element={<Account />} />
       <Route path="/write" element={<Write />} />
       <Route path="/*" element={<NotFound />} />
+      <Route path="/board" element={<Board />} />
     </Routes>
   );
 }
