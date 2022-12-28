@@ -64,8 +64,8 @@ export const Password = styled.div`
   margin-top: 2rem;
 
   > button {
-    width: 77.31px;
-    margin-left: 56px;
+    width: 100px;
+    margin-left: 2.75rem;
   }
 `;
 

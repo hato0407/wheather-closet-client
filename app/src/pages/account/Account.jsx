@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as S from './Account.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
@@ -10,29 +10,38 @@ Account.defaultProps = {
 };
 
 export default function Account({ nickname, userEmail }) {
-  // Avartar 변경 State
+  // State
+  // Avartar 변경
   const [showModal, setShowModal] = useState(false);
 
-  // 새로운 비밀번호 State
+  // 닉네임 변경
+  const [nickName, setNickName] = useState('');
+
+  // 새로운 비밀번호
   const [password, setPassword] = useState('');
   const [passwordMessage, setPasswordMessage] = useState('');
   const [rePassword, setRePassword] = useState('');
   const [passwordCheckMessage, setPasswordCheckMessage] = useState('');
 
+  // api
+  useEffect(() => {}, []);
+
+  // Handle Event
   // TODO input Debouncing 처리하기
   const handlePassword = (e) => {
     const password = e.target.value;
-
     const message = validatePassword(password);
+
+    // 안내메시지, 비밀번호 저장
     setPasswordMessage(message);
     setPassword(password);
   };
 
-  // 비밀번호 재확인
+  // 안내메시지, 비밀번호 재확인
   const handlePasswordCheck = (e) => {
     const passwordCheck = e.target.value;
-
     const message = checkPassword(password, passwordCheck);
+
     setPasswordCheckMessage(message);
     setRePassword(passwordCheck);
   };
@@ -42,7 +51,7 @@ export default function Account({ nickname, userEmail }) {
     setShowModal(!showModal);
   };
 
-  const handleDeleteAccount = () => {
+  const deleteAccount = () => {
     const message = window.confirm('정말로 탈퇴하시겠습니까?');
 
     if (message) {
@@ -111,9 +120,7 @@ export default function Account({ nickname, userEmail }) {
             작성한 게시물은 직접 삭제해주세요.
           </S.DeleteDescription>
           <S.DeleteButton>
-            <S.SubmitButton onClick={handleDeleteAccount}>
-              회원탈퇴
-            </S.SubmitButton>
+            <S.SubmitButton onClick={deleteAccount}>회원탈퇴</S.SubmitButton>
           </S.DeleteButton>
         </S.DeleteAccount>
       </S.AccountWrapper>
