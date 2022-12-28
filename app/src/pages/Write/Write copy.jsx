@@ -4,7 +4,6 @@ import * as L from './Write.style';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { clothsType, styleType } from './ClothsOptions';
-import defalutImg from '../../assets/images/select.png';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
@@ -30,16 +29,16 @@ export default function Write() {
           <L.SubTitle>새 게시물 만들기</L.SubTitle>
           <L.ContainerBox>
             <L.Container2>
-              <L.Imgbox>
-                <L.SelectImg
-                  src={preview ? preview : defalutImg}
-                  alt="select_image"
-                />
-              </L.Imgbox>
+              <img
+                //src={avatar.length > 1 ? { preview } : './select.png'}
+                src={preview}
+                alt="select_image"
+                width={500}
+                height={400}
+              />
               <L.SeleteButton type="button">
                 <L.Label for="picture">사진 선택하기</L.Label>
               </L.SeleteButton>
-
               <L.InputImg
                 {...register('avatar')}
                 id="picture"
