@@ -22,7 +22,7 @@ export default function Youtube() {
         setData(response.data.items[0].id.videoId);
         setSecondData(response.data.items[1].id.videoId);
       });
-  }, [API_KEY]);
+  }, [API_KEY, name]);
   return (
     <S.Container>
       <S.Text>오늘 입은 옷 관리하는 꿀팁은?</S.Text>
