@@ -14,15 +14,13 @@ export default function Youtube() {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${
-          name + '관리하는 법'
-        }&type=video&key=${API_KEY}`,
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=${name}&type=video&key=${API_KEY}`,
       )
       .then((response) => {
         setData(response.data.items[0].id.videoId);
         setSecondData(response.data.items[1].id.videoId);
       });
-  }, [API_KEY]);
+  }, [API_KEY, name]);
   return (
     <S.Container>
       <S.Text>오늘 입은 옷 관리하는 꿀팁은?</S.Text>
