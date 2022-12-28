@@ -34,7 +34,7 @@ export default function Login() {
             <L.Description2>
               <GoogleButton></GoogleButton>
             </L.Description2>
-            <L.Description2>비밀번호를 잊으셨나요?</L.Description2>
+            {/* <L.Description2>비밀번호를 잊으셨나요?</L.Description2> */}
           </L.LoginWrapper>
         </L.Container2>
         <L.Container3>
