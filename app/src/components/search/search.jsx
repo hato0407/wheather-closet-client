@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { API } from '../../config/config';
 import * as action from '../../redux/weather';
 import * as S from './search.style';
