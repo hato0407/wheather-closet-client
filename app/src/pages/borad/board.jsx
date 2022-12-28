@@ -55,25 +55,28 @@ export default function Board() {
 
   return (
     <main>
-      <S.MyPageWrapper>
+      <S.BoardWrapper>
         <S.Section>
           <S.ContentsWrapper>
-            {TABS.map((el, idx) => {
-              return (
-                <S.TabMenu
-                  onClick={() => {
-                    onChangeTab(idx, el.value);
-                  }}
-                  key={idx}
-                >
-                  {el.label}
-                </S.TabMenu>
-              );
-            })}
+            <h1>TODAY Weather Fit !</h1>
+            <S.TabMenu>
+              {TABS.map((el, idx) => {
+                return (
+                  <S.TabItem
+                    onClick={() => {
+                      onChangeTab(idx, el.value);
+                    }}
+                    key={idx}
+                  >
+                    {el.label}
+                  </S.TabItem>
+                );
+              })}
+            </S.TabMenu>
+            <BoardList boardData={boardData} />
           </S.ContentsWrapper>
         </S.Section>
-        <BoardList boardData={boardData} />
-      </S.MyPageWrapper>
+      </S.BoardWrapper>
     </main>
   );
 }

@@ -6,6 +6,7 @@ export const ListLayout = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
   gap: 20px;
+  padding-bottom: 2rem;
 `;
 
 // Item(li)

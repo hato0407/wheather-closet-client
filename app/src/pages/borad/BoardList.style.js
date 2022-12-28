@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const ListLayout = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px 20px;
+  place-items: center;
+  gap: 20px;
 `;
 
 // Item(li)
@@ -13,11 +14,13 @@ export const ItemWrapper = styled.div`
 `;
 
 export const Clothes = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 230px;
+  overflow: hidden;
 `;
 
 export const ClothesImage = styled.img`
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
