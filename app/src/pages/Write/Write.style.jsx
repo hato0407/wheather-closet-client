@@ -20,7 +20,7 @@ export const Container = styled.div`
 export const ContainerBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;export 
+  justify-content: center;
 `;
 
 export const Container2 = styled.div`
@@ -33,6 +33,7 @@ export const Container2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
 
   + div {
@@ -75,19 +76,31 @@ export const Description = styled.p`
 export const SeleteButton = styled.button`
   height: 35px;
   margin: 0px 0px 20px 0px;
-  background-color: #fff500;
+  background-color: #fff0a4;
   border: solid #ffffff;
   border-radius: 8px;
-  opacity: 0.7;
+  padding: 5px;
+  margin-top: auto;
 `;
 
 export const Button = styled.button`
   height: 35px;
   margin-top: 45px;
-  background-color: #fff500;
+  background-color: #fff0a4;
   border: solid #ffffff;
+  padding: 5px;
   border-radius: 8px;
-  opacity: 0.7;
+`;
+
+export const Imgbox = styled.div`
+  margin-top: auto;
+  overflow: hidden;
+`;
+
+export const SelectImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const InputImg = styled.input`

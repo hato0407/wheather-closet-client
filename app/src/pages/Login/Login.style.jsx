@@ -87,10 +87,9 @@ export const Button = styled.button`
   width: 320px;
   height: 35px;
   margin: 20px 0px 20px 0px;
-  background-color: #fff500;
+  background-color: #fff0a4;
   border: solid #ffffff;
   border-radius: 8px;
-  opacity: 0.5;
 `;
 
 export const DividerLine = styled.div`
