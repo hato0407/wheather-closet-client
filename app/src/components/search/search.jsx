@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { API } from '../../config/config';
 import * as action from '../../redux/weather';
 import * as S from './search.style';
+import logo from '../../assets/images/logo.png';
 
 export default function Search() {
   const [place, setPlace] = useState('');
@@ -49,9 +50,7 @@ export default function Search() {
 
   return (
     <S.SearchContainer>
-      <S.Title>
-        <h1>What Should I Wear Today?</h1>
-      </S.Title>
+      <S.Logo src={logo} alt="로고" />
       <S.Input
         type="text"
         placeholder="영어로 지역명을 입력하세요. ex)Seoul"
