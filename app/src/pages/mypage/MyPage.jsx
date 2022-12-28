@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './MyPage.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
-import BoardList from '../../components/board/BoardList';
+import MyBoard from '../mypage/MyBoard';
 import SkeletonBoard from '../../components/skeletonUI/SkeletonBoard';
 
 MyPage.defaultProps = {
@@ -57,7 +57,7 @@ export default function MyPage({ userId }) {
                 </S.TabItem>
               ))}
             </S.TabMenu>
-            {clickedTab === '내 게시글' ? <BoardList /> : <SkeletonBoard />}
+            {clickedTab === '내 게시글' ? <MyBoard /> : <SkeletonBoard />}
           </S.ContentsWrapper>
         </S.Section>
       </S.MyPageWrapper>
