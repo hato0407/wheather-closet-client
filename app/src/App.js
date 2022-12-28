@@ -6,7 +6,7 @@ import Register from './pages/Register/register';
 import Account from './pages/account/Account';
 import NotFound from './pages/notfound/NotFound';
 import Write from './pages/Write/write';
-import Borad from './pages/borad/BoardList';
+import Board from './pages/borad/Board';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Route path="/account" element={<Account />} />
       <Route path="/write" element={<Write />} />
       <Route path="/*" element={<NotFound />} />
-      <Route path="/board" element={<Borad />} />
+      <Route path="/board" element={<Board />} />
     </Routes>
   );
 }

@@ -9,7 +9,7 @@ export default function BoardList() {
 
   const getBoardData = async () => {
     try {
-      const result = await axios('/store/myPagePost.json');
+      const result = await axios('/store/mypost.json');
       setData(result.data);
       setIsLoading(false);
     } catch (err) {
