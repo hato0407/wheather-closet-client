@@ -5,6 +5,8 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { clothsType, styleType } from './ClothsOptions';
 import defalutImg from '../../assets/images/select.png';
+import NearLocation from './near';
+import City from './city';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
@@ -54,7 +56,8 @@ export default function Write() {
               </L.UserName>
 
               <L.UserWrite>
-                <L.Description>위치 추가</L.Description>
+                <City />
+                <NearLocation />
               </L.UserWrite>
               <L.UserWrite>
                 <L.Description>

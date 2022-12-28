@@ -45,7 +45,7 @@ export const Container2 = styled.div`
 export const UserName = styled.div`
   width: 300px;
   height: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 `;
 
 export const UserWrite = styled.div`
@@ -110,4 +110,21 @@ export const InputImg = styled.input`
 
 export const Label = styled.label`
   cursor: pointer;
+`;
+
+export const LocationButton = styled.button`
+  background-color: #f5f5f5;
+  border: none;
+  width: 300px;
+  height: 32px;
+  margin: 2vh 0;
+
+  color: #5e5f61;
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+export const City = styled.h2`
+  color: #5e5f61;
+  font-weight: bold;
 `;
