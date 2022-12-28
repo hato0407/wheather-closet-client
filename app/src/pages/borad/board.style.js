@@ -1,28 +1,49 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const UserProfile = styled.section`
+export const MyPageWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 24px 0;
+  gap: 1.5rem;
+  margin-top: 5.625rem;
 `;
 
-export const UserId = styled.span`
-  margin-left: 24px;
-  font-size: 1.5rem;
-  font-weight: bold;
+export const Section = styled.section`
+  max-width: 60rem;
+  width: 100%;
 `;
 
-export const TabWrapper = styled.div`
-  margin: 30px 0;
-  text-align: center;
-  cursor: pointer;
+export const AvatarWrapper = styled.div`
+  display: flex;
+  gap: 2.5rem;
 
-  > span + span {
-    margin-left: 12vw;
+  > span {
+    align-self: center;
   }
 `;
 
-export const TabMenu = styled.span`
-  font-size: 1.125rem;
-  font-weight: bold;
+export const ContentsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+`;
+
+export const TabMenu = styled.div`
+  display: flex;
+  gap: 12vh;
+  }
+`;
+
+export const TabItem = styled.p`
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+
+  ${(props) =>
+    props.active &&
+    css`
+      background: rgba(230, 230, 230, 0.0001);
+      box-shadow: inset 0px -4px 0px #ffdc45;
+    `}
 `;
