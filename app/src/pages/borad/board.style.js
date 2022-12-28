@@ -1,26 +1,16 @@
 import styled, { css } from 'styled-components';
 
-export const MyPageWrapper = styled.div`
+export const BoardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
   margin-top: 5.625rem;
+  padding-bottom: 2rem;
 `;
 
 export const Section = styled.section`
   max-width: 60rem;
   width: 100%;
-`;
-
-export const AvatarWrapper = styled.div`
-  display: flex;
-  gap: 2.5rem;
-
-  > span {
-    align-self: center;
-  }
 `;
 
 export const ContentsWrapper = styled.div`
@@ -32,12 +22,13 @@ export const ContentsWrapper = styled.div`
 
 export const TabMenu = styled.div`
   display: flex;
-  gap: 12vh;
+  gap: 5vh;
   }
 `;
 
-export const TabItem = styled.p`
+export const TabItem = styled.span`
   border-bottom: 1px solid transparent;
+  font-weight: bold;
   cursor: pointer;
 
   ${(props) =>
