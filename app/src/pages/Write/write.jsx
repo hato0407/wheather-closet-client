@@ -5,10 +5,28 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { clothsType, styleType } from './ClothsOptions';
 import defalutImg from '../../assets/images/select.png';
+import axios from 'axios';
+import Search from './near';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
-  const [preview, setPreview] = useState('');
+  const [preview, setPreview] = useState(''); // 미리보기
+
+  const [img, setImage] = useState(null);
+
+  const onChange = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const handlePost = async () => {
+    const formData = new FormData();
+    formData.append('file', img);
+    // 서버의 upload API 호출
+    const res = await axios.post('/api/upload', formData);
+    console.log(res);
+  };
+
+  // 사진 전송하기
   const avatar = watch('avatar');
   const animatedComponents = makeAnimated(); // 옷 종류 태그 선택 애니메이션
 
@@ -46,6 +64,7 @@ export default function Write() {
                 name="avatar"
                 type="file"
                 accept="image/*"
+                onChange={onChange}
               />
             </L.Container2>
             <L.Container2>
@@ -54,7 +73,9 @@ export default function Write() {
               </L.UserName>
 
               <L.UserWrite>
-                <L.Description>위치 추가</L.Description>
+                <L.Description>
+                  <Search />
+                </L.Description>
               </L.UserWrite>
               <L.UserWrite>
                 <L.Description>
@@ -89,7 +110,9 @@ export default function Write() {
                 </L.Description>
               </L.UserWrite>
 
-              <L.Button type="submit">공유하기</L.Button>
+              <L.Button type="submit" onClick={handlePost}>
+                공유하기
+              </L.Button>
             </L.Container2>
           </L.ContainerBox>
         </L.Container>

@@ -45,13 +45,13 @@ export const Container2 = styled.div`
 export const UserName = styled.div`
   width: 300px;
   height: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 `;
 
 export const UserWrite = styled.div`
   width: 300px;
   height: 50px;
-  margin: 20px 0px 20px 0px;
+  margin: 25px 0px 25px 0px;
   border-bottom: solid 1px #ececec;
 `;
 
