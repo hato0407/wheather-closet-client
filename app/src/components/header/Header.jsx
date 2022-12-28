@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import Avartar from '../../components/avatar/Avatar';
-import logo from '../../assets/images/logo.png';
+import headerlogo from '../../assets/images/header-logo.png';
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,9 +16,7 @@ export default function Header() {
     <header>
       <S.HeaderWrapper>
         {/* TODO 로고 컴포넌트 만들기 */}
-        <span>
-          <img src={logo} />
-        </span>
+        <S.Logo src={headerlogo} />
         <span>
           <Link to="/">날씨옷장</Link>
         </span>
