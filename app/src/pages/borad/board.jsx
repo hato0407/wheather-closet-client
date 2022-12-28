@@ -1,37 +1,41 @@
-import { useState } from 'react';
-import * as S from './board.style';
-import Avartar from '../../components/avatar/Avatar';
-import AvartarModal from '../../components/avatar/AvatarModal';
-import BoardList from '../../components/board/BoardList';
-import { dummypost } from './../../data/post';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import * as S from './Board.style';
+import BoardList from '../borad/BoardList';
 
-MyPage.defaultProps = {
-  userId: 'TODAY Weather Fit !',
-};
+export default function Board() {
+  // Tab
+  const TABS = [
+    {
+      label: '시간순',
+      value: 'createdDatetime',
+    },
+    {
+      label: '좋아요',
+      value: 'likedBy',
+    },
+  ];
 
-const arr = [
-  // {
-  //   label: "거리순",
-  //   value: "",
-  // },
-  {
-    label: '시간순',
-    value: 'createdDatetime',
-  },
-  {
-    label: '좋아요',
-    value: 'likedBy',
-  },
-];
-export default function MyPage({ userId }) {
-  const [show, setShow] = useState(false);
+  // State
   const [tab, setTab] = useState(0);
-  const [boardData, setBoardData] = useState(dummypost);
+  const [boardData, setBoardData] = useState([]);
 
-  const handleModal = () => {
-    setShow(!show);
+  const getBoardData = async () => {
+    try {
+      const result = await axios('/store/post.json');
+      setBoardData(result.data);
+      console.log(boardData);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
+  //
+  useEffect(() => {
+    getBoardData();
+  }, []);
+
+  // Handle Event
   const onChangeTab = (idx, value) => {
     setTab(idx);
 
@@ -46,33 +50,30 @@ export default function MyPage({ userId }) {
       return 0;
     });
     setBoardData(sortedPost);
+    console.log(boardData);
   };
 
   return (
     <main>
-      {/* <S.UserProfile>
-        <Avartar onClick={handleModal} />
-        {show && <AvartarModal onClick={handleModal} />}
-        <S.UserId>{userId}</S.UserId>
-      </S.UserProfile> */}
-      <hr />
-      <section>
-        <S.TabWrapper>
-          {arr.map((el, idx) => {
-            return (
-              <S.TabMenu
-                onClick={() => {
-                  onChangeTab(idx, el.value);
-                }}
-                key={idx}
-              >
-                {el.label}
-              </S.TabMenu>
-            );
-          })}
-        </S.TabWrapper>
+      <S.MyPageWrapper>
+        <S.Section>
+          <S.ContentsWrapper>
+            {TABS.map((el, idx) => {
+              return (
+                <S.TabMenu
+                  onClick={() => {
+                    onChangeTab(idx, el.value);
+                  }}
+                  key={idx}
+                >
+                  {el.label}
+                </S.TabMenu>
+              );
+            })}
+          </S.ContentsWrapper>
+        </S.Section>
         <BoardList boardData={boardData} />
-      </section>
+      </S.MyPageWrapper>
     </main>
   );
 }
