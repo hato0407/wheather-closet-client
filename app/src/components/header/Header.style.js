@@ -69,3 +69,7 @@ export const UserMenuItem = styled.li`
     margin-top: 0;
   }
 `;
+export const Logo = styled.img`
+  width: 50px;
+  height: 50px;
+`;

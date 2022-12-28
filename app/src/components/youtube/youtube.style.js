@@ -8,9 +8,7 @@ export const Container = styled.div`
   padding: 7vh 0;
 `;
 export const Item = styled.iframe`
-  width: 500px
-  height: 500px;
-  padding: 2vh 0;
+  padding: 5vh 3vw;
   border: none;
 `;
 export const Text = styled.div`
@@ -18,4 +16,7 @@ export const Text = styled.div`
 `;
 export const Desc = styled.div`
   font-size: 17px;
+`;
+export const VideoWrap = styled.div`
+  display: flex;
 `;
