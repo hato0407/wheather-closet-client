@@ -5,12 +5,14 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { clothsType, styleType } from './ClothsOptions';
 import defalutImg from '../../assets/images/select.png';
+import { useSelector } from 'react-redux';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
   const [preview, setPreview] = useState('');
   const avatar = watch('avatar');
   const animatedComponents = makeAnimated(); // 옷 종류 태그 선택 애니메이션
+  const location = useSelector((state) => state.weather.city);
 
   useEffect(() => {
     if (avatar && avatar.length > 0) {

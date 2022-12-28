@@ -29,7 +29,7 @@ export const SearchButton = styled.button`
   margin: 2vh 0;
 `;
 export const Logo = styled.img`
-  width: 827px;
-  height: 500px;
+  width: 50vw;
+  height: 60vh;
   margin-bottom: 10vh;
 `;
