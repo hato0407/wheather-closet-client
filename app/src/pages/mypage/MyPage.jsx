@@ -2,26 +2,23 @@ import { useState } from 'react';
 import * as S from './MyPage.style';
 import Avartar from '../../components/avatar/Avatar';
 import AvartarModal from '../../components/avatar/AvatarModal';
-import MyBoard from '../mypage/MyBoard';
-import SkeletonBoard from '../../components/skeletonUI/SkeletonBoard';
+import MyBoard from './MyPost';
 
 MyPage.defaultProps = {
   userId: 'clother',
 };
 
 export default function MyPage({ userId }) {
-  // Avartar 변경 State
-  const [showModal, setShowModal] = useState(false);
   const TAB_MENU = ['내 게시글', '좋아요'];
 
-  // 로딩 State
-  const [isLoading, setIsLoading] = useState(false);
+  // State
+  // Avartar 변경
+  const [showModal, setShowModal] = useState(false);
 
-  // Tab State
+  // Tab
   const [clickedTab, setClickedTab] = useState('내 게시글');
 
   // Handle Event
-
   // Tab 클릭 시 변경
   const handleClickTab = (tab) => {
     setClickedTab(tab);
@@ -57,7 +54,11 @@ export default function MyPage({ userId }) {
                 </S.TabItem>
               ))}
             </S.TabMenu>
-            {clickedTab === '내 게시글' ? <MyBoard /> : <SkeletonBoard />}
+            {clickedTab === '내 게시글' ? (
+              <MyBoard />
+            ) : (
+              '좋아요 한 게시글이 없습니다.'
+            )}
           </S.ContentsWrapper>
         </S.Section>
       </S.MyPageWrapper>
