@@ -2,7 +2,7 @@ import * as L from './Register.style';
 import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import GoogleButton from '../login/googleLogin';
+import GoogleButton from '../Login/googleLogin';
 
 export default function Register() {
   const {
