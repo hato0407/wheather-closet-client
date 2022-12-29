@@ -44,6 +44,8 @@ export const MenuItemAuth = styled.div`
 export const UserMenu = styled.div`
   position: relative;
   margin-left: 1.875rem;
+  z-index: 90;
+  cursor: pointer;
 
   div:first-child {
     width: 32px;
