@@ -39,8 +39,7 @@ export default function Write() {
 
       reader.onload = () => {
         resolve(reader.result);
-        const result = reader.result;
-        picList.current = [result, ...picList.current];
+        picList.current = [reader.result, ...picList.current];
         store.setData('pics', picList.current);
       };
     });
