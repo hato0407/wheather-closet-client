@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
 import Logo from '../../assets/icon/Logo';
@@ -8,8 +8,19 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
 
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setIsLogin(true);
+    }
+  }, []);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const onLogout = () => {
+    localStorage.clear();
+    setIsLogin(false);
   };
 
   return (
@@ -37,7 +48,7 @@ export default function Header() {
           </S.Menu>
         </S.Nav>
         {/* TODO isLogin true로 변경하기*/}
-        {!isLogin && (
+        {isLogin && (
           <S.UserMenu>
             <div onClick={toggleMenu}>
               <S.MenuIcon src={bar} alt="메뉴" />
@@ -51,7 +62,7 @@ export default function Header() {
                   <S.UserMenuItem>
                     <Link to="/account">계정관리</Link>
                   </S.UserMenuItem>
-                  <S.UserMenuItem>로그아웃</S.UserMenuItem>
+                  <S.UserMenuItem onClick={onLogout}>로그아웃</S.UserMenuItem>
                 </ul>
               </S.UserMenuWrapper>
             )}
