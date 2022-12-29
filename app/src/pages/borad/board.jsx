@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import * as S from './Board.style';
+import * as S from './board.style';
 import BoardList from '../borad/BoardList';
 
 export default function Board() {
