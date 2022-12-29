@@ -20,6 +20,7 @@ export default function Board() {
   // State
   const [tab, setTab] = useState(0);
   const [boardData, setBoardData] = useState([]);
+  const [count, setCount] = useState();
 
   const getBoardData = async () => {
     try {
