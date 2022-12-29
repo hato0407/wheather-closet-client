@@ -14,13 +14,9 @@ export const Section = styled.section`
   width: 100%;
 `;
 
-export const AvatarWrapper = styled.div`
-  display: flex;
-  gap: 2.5rem;
-
-  > span {
-    align-self: center;
-  }
+export const Title = styled.h2`
+  font-size: large;
+  font-weight: bold;
 `;
 
 export const ContentsWrapper = styled.div`

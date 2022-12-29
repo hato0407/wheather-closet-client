@@ -46,9 +46,14 @@ export const UserMenu = styled.div`
   margin-left: 1.875rem;
 
   div:first-child {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 32px;
+    height: 32px;
   }
+`;
+
+export const MenuIcon = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 export const UserMenuWrapper = styled.div`
