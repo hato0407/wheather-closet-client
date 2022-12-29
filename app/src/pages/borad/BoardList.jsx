@@ -1,4 +1,6 @@
+import react, { useState } from 'react';
 import * as S from './BoardList.style';
+import HeartButton from './likes/likes';
 
 function compare(a, b) {
   if (a.likedBy > b.likedBy) {
@@ -13,7 +15,6 @@ function compare(a, b) {
 
 export default function BoardList({ boardData }) {
   const sortedPost = boardData.sort(compare);
-
   return (
     <S.ListLayout>
       {sortedPost.map((item, idx) => (
@@ -24,12 +25,25 @@ export default function BoardList({ boardData }) {
 }
 
 function ListItem({ item }) {
+  const [like, setLike] = useState(false);
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setLike(!like);
+    if (like === true) {
+      setCount(count - 1);
+    } else if (like === false) {
+      setCount(count + 1);
+    }
+  }
+
   return (
     <li>
       <S.ItemWrapper>
         <S.Clothes>
           <S.ClothesImage src={item.image} alt="" />
         </S.Clothes>
+        <HeartButton likes={like} onClick={handleClick} count={count} />
       </S.ItemWrapper>
     </li>
   );

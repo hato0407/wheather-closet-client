@@ -6,7 +6,7 @@ import Register from './pages/Register/register';
 import Account from './pages/account/Account';
 import NotFound from './pages/notfound/NotFound';
 import Write from './pages/Write/write';
-import Board from './pages/borad/Board';
+import Board from './pages/borad/board';
 
 function App() {
   return (
