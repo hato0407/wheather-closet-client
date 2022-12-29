@@ -20,11 +20,13 @@ export default function Board() {
   // State
   const [tab, setTab] = useState(0);
   const [boardData, setBoardData] = useState([]);
-  const [count, setCount] = useState();
-
+  const [mode, setMode] = useState(false);
   const getBoardData = async () => {
     try {
       const result = store.getData('posts');
+      if (result) {
+        setMode(true);
+      }
       setBoardData(result);
       console.log(boardData);
     } catch (err) {
@@ -75,7 +77,11 @@ export default function Board() {
                 );
               })}
             </S.TabMenu>
-            <BoardList boardData={boardData} />
+            {mode ? (
+              <BoardList boardData={boardData} />
+            ) : (
+              <h2>아무런 글이 없습니다</h2>
+            )}
           </S.ContentsWrapper>
         </S.Section>
       </S.BoardWrapper>

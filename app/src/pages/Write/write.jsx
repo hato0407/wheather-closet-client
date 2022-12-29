@@ -8,6 +8,7 @@ import defalutImg from '../../assets/images/select.png';
 import NearLocation from './near';
 import City from './city';
 import store from '../../utils/store';
+import axios from 'axios';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
@@ -36,11 +37,20 @@ export default function Write() {
     return new Promise((resolve) => {
       const reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
+      let pics = store.getData('pics');
 
       reader.onload = () => {
         resolve(reader.result);
-        picList.current = [reader.result, ...picList.current];
-        store.setData('pics', picList.current);
+        console.log('pics', pics);
+        console.log('reader.result', reader.result);
+        if (pics) {
+          console.log('pics', pics);
+
+          const res = [reader.result, ...pics];
+          store.setData('pics', res);
+        } else {
+          store.setData('pics', reader.result);
+        }
       };
     });
   };
