@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import * as L from './Write.style';
 import Select from 'react-select';
@@ -7,10 +7,13 @@ import { clothsType, styleType } from './ClothsOptions';
 import defalutImg from '../../assets/images/select.png';
 import NearLocation from './near';
 import City from './city';
+import store from '../../utils/store';
 
 export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
   const [preview, setPreview] = useState('');
+  const [posts, setPosts] = useState([]);
+  const postList = useRef([]);
   const avatar = watch('avatar');
   const animatedComponents = makeAnimated(); // 옷 종류 태그 선택 애니메이션
 
@@ -21,12 +24,19 @@ export default function Write() {
     }
   }, [avatar]);
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+  const handle = (post) => {
+    postList.current = [post, ...postList.current];
+    store.setData('posts', postList.current);
+    setPosts([...postList.current]);
+    store.removeStore('current_post');
   };
 
+  function handleOnload(e) {
+    console.log(e.target.value);
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(handle)}>
       <L.ContainerWrapper>
         <L.Container>
           <L.SubTitle>새 게시물 만들기</L.SubTitle>
@@ -36,6 +46,7 @@ export default function Write() {
                 <L.SelectImg
                   src={preview ? preview : defalutImg}
                   alt="select_image"
+                  onLoad={handleOnload}
                 />
               </L.Imgbox>
               <L.SeleteButton type="button">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as S from './board.style';
 import BoardList from '../borad/BoardList';
+import store from '../../utils/store';
 
 export default function Board() {
   // Tab
@@ -22,8 +23,8 @@ export default function Board() {
 
   const getBoardData = async () => {
     try {
-      const result = await axios('/store/post.json');
-      setBoardData(result.data);
+      const result = store.getData('posts');
+      setBoardData(result);
       console.log(boardData);
     } catch (err) {
       console.log(err);
