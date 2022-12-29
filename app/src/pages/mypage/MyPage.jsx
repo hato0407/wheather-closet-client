@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as S from './MyPage.style';
-import MyBoard from './MyPost';
+import MyPost from './MyPost';
 
 MyPage.defaultProps = {
   userId: 'clother',
@@ -25,8 +25,7 @@ export default function MyPage({ userId }) {
         <S.Section>
           <S.Title>{userId}님의 날씨옷장</S.Title>
         </S.Section>
-        {/* TODO themeProvieder 사용 (hr, h*, wrapper) */}
-        <hr style={{ width: '100%', maxWidth: '60rem' }} />
+        <S.Hr />
         <S.Section>
           <S.ContentsWrapper>
             <S.TabMenu>
@@ -41,9 +40,9 @@ export default function MyPage({ userId }) {
               ))}
             </S.TabMenu>
             {clickedTab === '내 게시글' ? (
-              <MyBoard />
+              <MyPost />
             ) : (
-              '좋아요 한 게시글이 없습니다.'
+              <S.EmptyMessage>좋아요 한 게시글이 없습니다.</S.EmptyMessage>
             )}
           </S.ContentsWrapper>
         </S.Section>

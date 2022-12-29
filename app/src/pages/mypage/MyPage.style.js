@@ -19,6 +19,11 @@ export const Title = styled.h2`
   font-weight: bold;
 `;
 
+export const Hr = styled.hr`
+  width: 100%;
+  max-width: 60rem;
+`;
+
 export const ContentsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,4 +47,8 @@ export const TabItem = styled.p`
       background: rgba(230, 230, 230, 0.0001);
       box-shadow: inset 0px -4px 0px #ffdc45;
     `}
+`;
+
+export const EmptyMessage = styled.div`
+  margin-top: 10rem;
 `;
