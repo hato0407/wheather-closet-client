@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
 `;
 
 export const Nav = styled.nav`

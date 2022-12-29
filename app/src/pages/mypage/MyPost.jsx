@@ -38,7 +38,7 @@ function ListItem({ imageUrl }) {
     <li>
       <S.ItemWrapper>
         <S.Clothes>
-          <S.ClothesImage src={imageUrl} alt="" />
+          <S.ClothesImage src={imageUrl} alt="이미지" />
         </S.Clothes>
       </S.ItemWrapper>
     </li>
