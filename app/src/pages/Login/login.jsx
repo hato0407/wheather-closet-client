@@ -12,14 +12,13 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     const res = await axios.post('/api/user/login', data);
-    const token = res.token;
-    console.log('res', res);
+    const token = res.data;
 
-    localStorage.setItem('token', token);
-
-    alert(`정상적으로 로그인되었습니다.`);
-
-    navigate('/');
+    if (token) {
+      localStorage.setItem('token', token);
+      alert(`정상적으로 로그인되었습니다.`);
+      navigate('/');
+    }
   };
 
   return (
