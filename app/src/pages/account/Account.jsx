@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import * as S from './Account.style';
-import Avartar from '../../components/avatar/Avatar';
-import AvartarModal from '../../components/avatar/AvatarModal';
 import { validatePassword, checkPassword } from '../../utils/validation';
 
 Account.defaultProps = {
@@ -11,9 +9,6 @@ Account.defaultProps = {
 
 export default function Account({ nickname, userEmail }) {
   // State
-  // Avartar 변경
-  const [showModal, setShowModal] = useState(false);
-
   // 닉네임 변경
   const [nickName, setNickName] = useState('');
 
@@ -46,11 +41,6 @@ export default function Account({ nickname, userEmail }) {
     setRePassword(passwordCheck);
   };
 
-  // Avartar 변경 모달창
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
   const deleteAccount = () => {
     const message = window.confirm('정말로 탈퇴하시겠습니까?');
 
@@ -66,8 +56,6 @@ export default function Account({ nickname, userEmail }) {
           <h2>프로필</h2>
           <hr />
           <S.ProfileWrapper>
-            <Avartar toggle={toggleModal} />
-            {showModal && <AvartarModal toggle={toggleModal} />}
             <S.UserFormWrapper>
               <form>
                 <S.Label>닉네임</S.Label>

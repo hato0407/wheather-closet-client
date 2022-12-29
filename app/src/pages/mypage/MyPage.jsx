@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import * as S from './MyPage.style';
-import Avartar from '../../components/avatar/Avatar';
-import AvartarModal from '../../components/avatar/AvatarModal';
 import MyBoard from './MyPost';
 
 MyPage.defaultProps = {
@@ -12,9 +10,6 @@ export default function MyPage({ userId }) {
   const TAB_MENU = ['내 게시글', '좋아요'];
 
   // State
-  // Avartar 변경
-  const [showModal, setShowModal] = useState(false);
-
   // Tab
   const [clickedTab, setClickedTab] = useState('내 게시글');
 
@@ -24,20 +19,11 @@ export default function MyPage({ userId }) {
     setClickedTab(tab);
   };
 
-  // Avartar 변경 모달창
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
   return (
     <main>
       <S.MyPageWrapper>
         <S.Section>
-          <S.AvatarWrapper>
-            <Avartar toggle={toggleModal} />
-            {showModal && <AvartarModal toggle={toggleModal} />}
-            <span>{userId}</span>
-          </S.AvatarWrapper>
+          <S.Title>{userId}님의 날씨옷장</S.Title>
         </S.Section>
         {/* TODO themeProvieder 사용 (hr, h*, wrapper) */}
         <hr style={{ width: '100%', maxWidth: '60rem' }} />
