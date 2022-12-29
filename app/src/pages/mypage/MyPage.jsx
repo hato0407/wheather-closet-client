@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import * as S from './MyPage.style';
 import MyPost from './MyPost';
 
