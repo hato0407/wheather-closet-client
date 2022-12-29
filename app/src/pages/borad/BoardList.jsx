@@ -1,4 +1,5 @@
 import react, { useState } from 'react';
+import store from '../../utils/store';
 import * as S from './BoardList.style';
 import HeartButton from './likes/likes';
 
@@ -17,17 +18,16 @@ export default function BoardList({ boardData }) {
   const sortedPost = boardData.sort(compare);
   return (
     <S.ListLayout>
-      {sortedPost.map((item, idx) => (
+      {boardData.map((item, idx) => (
         <ListItem item={item} key={item.id} />
       ))}
     </S.ListLayout>
   );
 }
 
-function ListItem({ item }) {
+function ListItem({ item, key }) {
   const [like, setLike] = useState(false);
   const [count, setCount] = useState(0);
-
   function handleClick() {
     setLike(!like);
     if (like === true) {
@@ -36,12 +36,12 @@ function ListItem({ item }) {
       setCount(count + 1);
     }
   }
-
+  const pics = store.getData('pics');
   return (
     <li>
       <S.ItemWrapper>
         <S.Clothes>
-          <S.ClothesImage src={item.image} alt="" />
+          <S.ClothesImage src={pics.map((e) => e)} alt="" />
         </S.Clothes>
         <HeartButton likes={like} onClick={handleClick} count={count} />
       </S.ItemWrapper>
