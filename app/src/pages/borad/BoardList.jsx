@@ -15,7 +15,7 @@ function compare(a, b) {
 }
 
 export default function BoardList({ boardData }) {
-  const sortedPost = boardData.sort(compare);
+  //const sortedPost = boardData.sort(compare);
   return (
     <S.ListLayout>
       {boardData.map((item, idx) => (
@@ -41,7 +41,7 @@ function ListItem({ item, key }) {
     <li>
       <S.ItemWrapper>
         <S.Clothes>
-          <S.ClothesImage src={pics.map((e) => e)} alt="" />
+          <S.ClothesImage src={pics} alt="" />
         </S.Clothes>
         <HeartButton likes={like} onClick={handleClick} count={count} />
       </S.ItemWrapper>
