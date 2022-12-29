@@ -13,7 +13,9 @@ export default function Write() {
   const { control, handleSubmit, register, watch } = useForm();
   const [preview, setPreview] = useState('');
   const [posts, setPosts] = useState([]);
+  const [pic, setPic] = useState([]);
   const postList = useRef([]);
+  const picList = useRef([]);
   const avatar = watch('avatar');
   const animatedComponents = makeAnimated(); // 옷 종류 태그 선택 애니메이션
 
@@ -28,12 +30,21 @@ export default function Write() {
     postList.current = [post, ...postList.current];
     store.setData('posts', postList.current);
     setPosts([...postList.current]);
-    store.removeStore('current_post');
   };
 
-  function handleOnload(e) {
-    console.log(e.target.value);
-  }
+  const handleChange = (e) => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+
+      reader.onload = () => {
+        resolve(reader.result);
+        const result = reader.result;
+        picList.current = [result, ...picList.current];
+        store.setData('pics', picList.current);
+      };
+    });
+  };
 
   return (
     <form onSubmit={handleSubmit(handle)}>
@@ -46,7 +57,6 @@ export default function Write() {
                 <L.SelectImg
                   src={preview ? preview : defalutImg}
                   alt="select_image"
-                  onLoad={handleOnload}
                 />
               </L.Imgbox>
               <L.SeleteButton type="button">
@@ -59,6 +69,7 @@ export default function Write() {
                 name="avatar"
                 type="file"
                 accept="image/*"
+                onChange={handleChange}
               />
             </L.Container2>
             <L.Container2>
