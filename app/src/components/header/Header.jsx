@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Header.style';
-import Avartar from '../../components/avatar/Avatar';
 import Logo from '../../assets/icon/Logo';
+import bar from '../../assets/icon/bars-solid.png';
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -39,7 +39,9 @@ export default function Header() {
         {/* TODO isLogin true로 변경하기*/}
         {!isLogin && (
           <S.UserMenu>
-            <Avartar toggle={toggleMenu} />
+            <div onClick={toggleMenu}>
+              <S.MenuIcon src={bar} alt="메뉴" />
+            </div>
             {showMenu && (
               <S.UserMenuWrapper>
                 <ul onClick={toggleMenu}>
