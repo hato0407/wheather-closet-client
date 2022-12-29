@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import GoogleButton from '../Login/googleLogin';
+import axios from 'axios';
 
 export default function Register() {
   const {
@@ -16,8 +17,12 @@ export default function Register() {
   const password = useRef();
   password.current = watch('password');
 
+  const onSubmit = async (data) => {
+    await axios.post('http://34.64.162.140:3000/user', data);
+  };
+
   return (
-    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <L.Container>
         <L.Container2>
           <L.TitleWrapper>
