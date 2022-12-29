@@ -18,7 +18,8 @@ export default function Register() {
   password.current = watch('password');
 
   const onSubmit = async (data) => {
-    await axios.post('http://34.64.162.140:3000/user', data);
+    const res = await axios.post('/api/user/register', data);
+    console.log('res', res);
   };
 
   return (
